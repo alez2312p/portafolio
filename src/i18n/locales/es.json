@@ -1,0 +1,63 @@
+{
+  "HOME": {
+    "HELLO": "Hola 👋🏽, soy Alejandro P. Lezama",
+    "AVAILABLE": "Disponible para trabajar",
+    "INTRO": "en desarrollador front-end y aplicaciones móviles.",
+    "YEARS_EXPERIENCE": "4 años de experiencia",
+    "JOB_TITLE": "Tecnólogo en desarrollo de software.",
+    "CONTENT": "Posee conocimientos y habilidades en diversos lenguajes y tecnologías.",
+    "CONTACT_ME": "Contáctame",
+    "EXPERIENCE": "Experiencia",
+    "PROJECTS": "Proyectos",
+    "CODE": "Código",
+    "ABOUT_ME": "Sobre mí",
+    "PREVIEW": "Sitio web"
+  },
+  "EXPERIENCE": [
+    {
+      "TITLE": "Freelance - fullstack",
+      "COMPANY": "Independiente",
+      "DATE": "Actualmente",
+      "DESCRIPTION": "Desarrollo aplicaciones móviles utilizando Dart y el framework Flutter. Construyo APIs con Node.js y manejo conexiones a bases de datos MongoDB y Firebase. También diseño aplicaciones móviles en Figma. Además, desarrollo páginas web con React, Next.js, Tailwind CSS y CSS, integrándolas mediante APIs."
+    },
+    {
+      "TITLE": "Soporte técnico",
+      "COMPANY": "Corporación universitaria Remington",
+      "DATE": "Septiembre 2022 - Marzo 2023",
+      "DESCRIPTION": "Realizar mantenimientos de software y hardware a equipos de computo; desatascar, cambiar toner y configurar impresoras, realizar mantenimientos a la red, configurar equipos de aulas de computo, resolver casos a estudiantes y trabajadores de la universidad."
+    },
+    {
+      "TITLE": "Desarrollador flutter",
+      "COMPANY": "LoopMedia",
+      "DATE": "Febrero 2022 - Agosto 2022",
+      "DESCRIPTION": "Optimizar y crear nuevas funciones para aplicaciones moviles con el lenguaje de programación dart y el framework Flutter. Optimizar y crear nuevas funciones para la página web con el Framework de React."
+    }
+  ],
+
+  "PROJECTS": [
+    {
+      "IMAGE": "/blog_page.webp",
+      "TITLE": "Blog",
+      "TAGS": ["NEXT", "CSS", "JAVASCRIPT", "PRISMA", "MONGODB", "FIREBASE"],
+      "DESCRIPTION": "A lifestyle blog that offers articles on fashion, travel, food, culture, and technology.",
+      "LINK": "blog-alez.vercel.app",
+      "GITHUB": "github.com/alez2312p/blog"
+    },
+    {
+      "IMAGE": "/e-commerce_page.webp",
+      "TITLE": "E-Commerce",
+      "TAGS": ["NEXT", "TAILWIND", "TYPESCRIPT", "MONGODB", "PRISMA"],
+      "DESCRIPTION": "",
+      "LINK": "e-commerce-alez.vercel.app",
+      "GITHUB": "github.com/alez2312p/e-commerce"
+    },
+    {
+      "IMAGE": "/academy-avax_page.webp",
+      "TITLE": "Avalanche Academy",
+      "TAGS": ["NEXT", "CSS", "TYPESCRIPT"],
+      "DESCRIPTION": "Actualmente trabajando",
+      "LINK": "academy-avax.vercel.app",
+      "GITHUB": "github.com/alez2312p/academy-avax"
+    }
+  ]
+}

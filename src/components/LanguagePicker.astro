@@ -1,0 +1,17 @@
+---
+import { getLangFromUrl, useTranslatedPath } from "../i18n/utils.ts";
+
+import { languages } from "../i18n/ui";
+
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
+---
+
+{
+Object.entries(languages).map(([langPrefiex, label]) => {
+    if (langPrefiex === lang) return <></>
+    return(<a
+    class="relative block py-2 transition hover:text-red-500 dark:hover:text-red-400"
+     href={translatePath("/", langPrefiex)}>{label}</a>)
+    })
+}

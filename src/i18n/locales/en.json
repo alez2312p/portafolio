@@ -1,0 +1,62 @@
+{
+  "HOME": {
+    "HELLO": "Hello 👋🏽, I am Alejandro P. Lezama",
+    "AVAILABLE": "Available for work",
+    "INTRO": "in front-end and mobile applications developer.",
+    "YEARS_EXPERIENCE": "4 years of experience",
+    "JOB_TITLE": "Software development technologist.",
+    "CONTENT": "Possesses knowledge and skills in various languages and technologies.",
+    "CONTACT_ME": "Contact me",
+    "EXPERIENCE": "Experience",
+    "PROJECTS": "Projects",
+    "CODE": "Code",
+    "ABOUT_ME": "About me",
+    "PREVIEW": "Website"
+  },
+  "EXPERIENCE": [
+    {
+      "TITLE": "Freelance - fullstack",
+      "COMPANY": "Freelance",
+      "DATE": "Currently",
+      "DESCRIPTION": "I develop mobile applications using Dart and the Flutter framework. I build APIs with Node.js and manage connections to MongoDB and Firebase databases. I also design mobile applications in Figma. Additionally, I develop websites with React, Next.js, Tailwind CSS, and CSS, integrating them with APIs."
+    },
+    {
+      "TITLE": "Technical Support",
+      "COMPANY": "Remington University Corporation",
+      "DATE": "September 2022 - March 2023",
+      "DESCRIPTION": "Perform software and hardware maintenance on computer equipment; unblock, change toner, and configure printers; maintain the network; configure classroom computers; resolve issues for students and university staff."
+    },
+    {
+      "TITLE": "Flutter Developer",
+      "COMPANY": "LoopMedia",
+      "DATE": "February 2022 - August 2022",
+      "DESCRIPTION": "Optimize and create new features for mobile applications using Dart and the Flutter framework. Optimize and create new features for the website using the React framework."
+    }
+  ],
+  "PROJECTS": [
+    {
+      "IMAGE": "/blog_page.webp",
+      "TITLE": "Blog",
+      "TAGS": ["NEXT", "CSS", "JAVASCRIPT", "PRISMA", "MONGODB", "FIREBASE"],
+      "DESCRIPTION": "Un blog de estilo de vida que ofrece artículos sobre moda, viajes, comida, cultura y tecnología.",
+      "LINK": "blog-alez.vercel.app",
+      "GITHUB": "github.com/alez2312p/blog"
+    },
+    {
+      "IMAGE": "/e-commerce_page.webp",
+      "TITLE": "E-Comnerce",
+      "TAGS": ["NEXT", "TAILWIND", "TYPESCRIPT", "MONGODB", "PRISMA"],
+      "DESCRIPTION": "",
+      "LINK": "blog-alez.vercel.app",
+      "GITHUB": "github.com/alez2312p/blog"
+    },
+    {
+      "IMAGE": "/academy-avax_page.webp",
+      "TITLE": "Avalanche Academy",
+      "TAGS": ["NEXT", "CSS", "TYPESCRIPT"],
+      "DESCRIPTION": "Currently working",
+      "LINK": "academy-avax.vercel.app",
+      "GITHUB": "github.com/alez2312p/academy-avax"
+    }
+  ]
+}
