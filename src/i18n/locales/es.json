@@ -3,7 +3,7 @@
     "HELLO": "Hola 👋🏽, soy Alejandro P. Lezama",
     "AVAILABLE": "Disponible para trabajar",
     "INTRO": "en desarrollador front-end y aplicaciones móviles.",
-    "YEARS_EXPERIENCE": "4 años de experiencia",
+    "YEARS_EXPERIENCE": "3 años de experiencia",
     "JOB_TITLE": "Tecnólogo en desarrollo de software.",
     "CONTENT": "Posee conocimientos y habilidades en diversos lenguajes y tecnologías.",
     "CONTACT_ME": "Contáctame",
@@ -39,7 +39,7 @@
       "IMAGE": "/blog_page.webp",
       "TITLE": "Blog",
       "TAGS": ["NEXT", "CSS", "JAVASCRIPT", "PRISMA", "MONGODB", "FIREBASE"],
-      "DESCRIPTION": "A lifestyle blog that offers articles on fashion, travel, food, culture, and technology.",
+      "DESCRIPTION": "Un blog de estilo de vida que ofrece artículos sobre moda, viajes, comida, cultura y tecnología.",
       "LINK": "blog-alez.vercel.app",
       "GITHUB": "github.com/alez2312p/blog"
     },
@@ -52,12 +52,17 @@
       "GITHUB": "github.com/alez2312p/e-commerce"
     },
     {
-      "IMAGE": "/academy-avax_page.webp",
-      "TITLE": "Avalanche Academy",
-      "TAGS": ["NEXT", "CSS", "TYPESCRIPT"],
-      "DESCRIPTION": "Actualmente trabajando",
-      "LINK": "academy-avax.vercel.app",
-      "GITHUB": "github.com/alez2312p/academy-avax"
+      "IMAGE": "/buckspay.jpg",
+      "TITLE": "Buckspay",
+      "TAGS": ["NEXT", "CSS", "TYPESCRIPT", "MONGODB", "FIREBASE"],
+      "DESCRIPTION": "App que ofrece a los usuarios la capacidad de realizar pagos, transferencias de manera eficiente.",
+      "LINK": "buckspay.xyz",
+      "GITHUB": "github.com/bucks-pay/buckspay_landing"
     }
-  ]
+  ],
+  "ABOUT": {
+    "CONTENT1": "Me llamo Alejandro Pérez Lezama, tengo 24 años, soy de Colombia. Terminé mis estudios como tecnólogo en desarrollo de software en la Corporación Universitaria Remington.",
+    "CONTENT2": "Soy embajador técnico de la blockchain Avalanche y he estado como organizador y mentor en varias hackathon en la ciudad de Medellín y Bógota.",
+    "CONTENT3": "Co-founder de dotlabs__, una comunidad enfocados en blockchain y web3. Además, Co-Fundador de Buckspay, Una app que ofrece a los usuarios la capacidad de realizar pagos, transferencias de manera eficiente."
+  }
 }
