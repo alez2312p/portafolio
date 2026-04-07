@@ -36,6 +36,29 @@
 
   "PROJECTS": [
     {
+      "IMAGE": "/barbershop.png",
+      "TITLE": "Barbershop",
+      "TAGS": ["NEXT", "TAILWIND", "TYPESCRIPT", "SHADCN", "SUPABASE"],
+      "DESCRIPTION": "Una aplicación web y móvil para la gestión de citas y turnos en barberías, salones de belleza y negocios similares. Permite a los clientes reservar citas, a los empleados gestionar su agenda y a los administradores supervisar el negocio de manera eficiente.",
+      "LINK": "barberflow-sigma.vercel.app/explore",
+      "GITHUB": "github.com/alez2312p/barberflow"
+    },
+    {
+      "IMAGE": "/constructtrack.png",
+      "TITLE": "Constructtrack",
+      "TAGS": [
+        "NEXT",
+        "TAILWIND",
+        "TYPESCRIPT",
+        "SHADCN",
+        "POSTGRESQL",
+        "PRISMA"
+      ],
+      "DESCRIPTION": "ConstructTrack es un sistema completo de gestión de inventario diseñado específicamente para la industria de la construcción. Permite controlar materiales, registrar movimientos de entradas y salidas, gestionar categorías y ubicaciones, y generar alertas cuando el stock alcanza niveles críticos.",
+      "LINK": "constructtrack-rust.vercel.app",
+      "GITHUB": "github.com/alez2312p/constructtrack"
+    },
+    {
       "IMAGE": "/blog_page.webp",
       "TITLE": "Blog",
       "TAGS": ["NEXT", "CSS", "JAVASCRIPT", "PRISMA", "MONGODB", "FIREBASE"],
@@ -58,21 +81,6 @@
       "DESCRIPTION": "App que ofrece a los usuarios la capacidad de realizar pagos, transferencias de manera eficiente.",
       "LINK": "buckspay.xyz",
       "GITHUB": "github.com/bucks-pay/buckspay_landing"
-    },
-    {
-      "IMAGE": "/constructtrack.png",
-      "TITLE": "Constructtrack",
-      "TAGS": [
-        "NEXT",
-        "TAILWIND",
-        "TYPESCRIPT",
-        "SHADCN",
-        "POSTGRESSQL",
-        "PRISMA"
-      ],
-      "DESCRIPTION": "ConstructTrack es un sistema completo de gestión de inventario diseñado específicamente para la industria de la construcción. Permite controlar materiales, registrar movimientos de entradas y salidas, gestionar categorías y ubicaciones, y generar alertas cuando el stock alcanza niveles críticos.",
-      "LINK": "constructtrack-rust.vercel.app",
-      "GITHUB": "github.com/alez2312p/constructtrack"
     }
   ],
   "ABOUT": {

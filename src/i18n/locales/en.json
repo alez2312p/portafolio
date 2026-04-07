@@ -35,6 +35,29 @@
   ],
   "PROJECTS": [
     {
+      "IMAGE": "/barbershop.png",
+      "TITLE": "Barbershop",
+      "TAGS": ["NEXT", "TAILWIND", "TYPESCRIPT", "SHADCN", "SUPABASE"],
+      "DESCRIPTION": "A web and mobile application for managing appointments and shifts in barbershops, beauty salons, and similar businesses. It allows customers to book appointments, employees to manage their schedules, and managers to efficiently oversee the business.",
+      "LINK": "barberflow-sigma.vercel.app/explore",
+      "GITHUB": "github.com/alez2312p/barberflow"
+    },
+    {
+      "IMAGE": "/constructtrack.png",
+      "TITLE": "ConstructTrack",
+      "TAGS": [
+        "NEXT",
+        "TAILWIND",
+        "TYPESCRIPT",
+        "SHADCN",
+        "POSTGRESQL",
+        "PRISMA"
+      ],
+      "DESCRIPTION": "ConstructTrack is a comprehensive inventory management system designed specifically for the construction industry. It allows you to track materials, record incoming and outgoing movements, manage categories and locations, and generate alerts when stock reaches critical levels.",
+      "LINK": "constructtrack-rust.vercel.app",
+      "GITHUB": "github.com/alez2312p/constructtrack"
+    },
+    {
       "IMAGE": "/blog_page.webp",
       "TITLE": "Blog",
       "TAGS": ["NEXT", "CSS", "JAVASCRIPT", "PRISMA", "MONGODB", "FIREBASE"],
@@ -57,21 +80,6 @@
       "DESCRIPTION": "An app that allows users to make payments and transfers efficiently.",
       "LINK": "buckspay.xyz",
       "GITHUB": "github.com/bucks-pay/buckspay_landing"
-    },
-    {
-      "IMAGE": "/constructtrack.png",
-      "TITLE": "ConstructTrack",
-      "TAGS": [
-        "NEXT",
-        "TAILWIND",
-        "TYPESCRIPT",
-        "SHADCN",
-        "POSTGRESSQL",
-        "PRISMA"
-      ],
-      "DESCRIPTION": "ConstructTrack is a comprehensive inventory management system designed specifically for the construction industry. It allows you to track materials, record incoming and outgoing movements, manage categories and locations, and generate alerts when stock reaches critical levels.",
-      "LINK": "constructtrack-rust.vercel.app",
-      "GITHUB": "github.com/alez2312p/constructtrack"
     }
   ],
   "ABOUT": {
