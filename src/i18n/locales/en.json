@@ -2,10 +2,10 @@
   "HOME": {
     "HELLO": "Hello 👋🏽, I am Alejandro P. Lezama",
     "AVAILABLE": "Available for work",
-    "INTRO": "in front-end and mobile applications developer.",
-    "YEARS_EXPERIENCE": "3 years of experience",
+    "INTRO": "in front-end, back-end and mobile applications developer.",
+    "YEARS_EXPERIENCE": "5 years of experience",
     "JOB_TITLE": "Software development technologist.",
-    "CONTENT": "Possesses knowledge and skills in various languages and technologies.",
+    "CONTENT": "I have knowledge and skills in various languages ​​and technologies.",
     "CONTACT_ME": "Contact me",
     "EXPERIENCE": "Experience",
     "PROJECTS": "Projects",
@@ -18,7 +18,7 @@
       "TITLE": "Freelance - fullstack",
       "COMPANY": "Freelance",
       "DATE": "Currently",
-      "DESCRIPTION": "I develop mobile applications using Dart and the Flutter framework. I build APIs with Node.js and manage connections to MongoDB and Firebase databases. I also design mobile applications in Figma. Additionally, I develop websites with React, Next.js, Tailwind CSS, and CSS, integrating them with APIs."
+      "DESCRIPTION": "I develop mobile applications using Dart and the Flutter framework. I build APIs with Node.js and manage connections to NoSQL databases like MongoDB and Firebase, and SQL databases like PostgreSQL and MySQL. I also develop websites with React, Next.js, Tailwind CSS, Shadcn, and CSS, integrating them through APIs."
     },
     {
       "TITLE": "Technical Support",
@@ -44,11 +44,11 @@
     },
     {
       "IMAGE": "/e-commerce_page.webp",
-      "TITLE": "E-Comnerce",
+      "TITLE": "E-Commerce",
       "TAGS": ["NEXT", "TAILWIND", "TYPESCRIPT", "MONGODB", "PRISMA"],
-      "DESCRIPTION": "",
-      "LINK": "blog-alez.vercel.app",
-      "GITHUB": "github.com/alez2312p/blog"
+      "DESCRIPTION": "Full-stack e-commerce platform with shopping cart, user authentication, and payment integration.",
+      "LINK": "e-commerce-alez.vercel.app",
+      "GITHUB": "github.com/alez2312p/e-commerce"
     },
     {
       "IMAGE": "/buckspay.jpg",
@@ -57,6 +57,21 @@
       "DESCRIPTION": "An app that allows users to make payments and transfers efficiently.",
       "LINK": "buckspay.xyz",
       "GITHUB": "github.com/bucks-pay/buckspay_landing"
+    },
+    {
+      "IMAGE": "/constructtrack.png",
+      "TITLE": "ConstructTrack",
+      "TAGS": [
+        "NEXT",
+        "TAILWIND",
+        "TYPESCRIPT",
+        "SHADCN",
+        "POSTGRESSQL",
+        "PRISMA"
+      ],
+      "DESCRIPTION": "ConstructTrack is a comprehensive inventory management system designed specifically for the construction industry. It allows you to track materials, record incoming and outgoing movements, manage categories and locations, and generate alerts when stock reaches critical levels.",
+      "LINK": "constructtrack-rust.vercel.app",
+      "GITHUB": "github.com/alez2312p/constructtrack"
     }
   ],
   "ABOUT": {

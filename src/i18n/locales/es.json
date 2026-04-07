@@ -2,10 +2,10 @@
   "HOME": {
     "HELLO": "Hola 👋🏽, soy Alejandro P. Lezama",
     "AVAILABLE": "Disponible para trabajar",
-    "INTRO": "en desarrollador front-end y aplicaciones móviles.",
-    "YEARS_EXPERIENCE": "3 años de experiencia",
+    "INTRO": "en desarrollador front-end, back-end y aplicaciones móviles.",
+    "YEARS_EXPERIENCE": "5 años de experiencia",
     "JOB_TITLE": "Tecnólogo en desarrollo de software.",
-    "CONTENT": "Posee conocimientos y habilidades en diversos lenguajes y tecnologías.",
+    "CONTENT": "Poseo conocimientos y habilidades en diversos lenguajes y tecnologías.",
     "CONTACT_ME": "Contáctame",
     "EXPERIENCE": "Experiencia",
     "PROJECTS": "Proyectos",
@@ -18,7 +18,7 @@
       "TITLE": "Freelance - fullstack",
       "COMPANY": "Independiente",
       "DATE": "Actualmente",
-      "DESCRIPTION": "Desarrollo aplicaciones móviles utilizando Dart y el framework Flutter. Construyo APIs con Node.js y manejo conexiones a bases de datos MongoDB y Firebase. También diseño aplicaciones móviles en Figma. Además, desarrollo páginas web con React, Next.js, Tailwind CSS y CSS, integrándolas mediante APIs."
+      "DESCRIPTION": "Desarrollo aplicaciones móviles utilizando Dart y el framework Flutter. Construyo APIs con Node.js y manejo conexiones a bases de datos No SQL como MongoDB y Firebase, bases de datos SQL como PostgreSQL, MySQL. Además, desarrollo páginas web con React, Next.js, Tailwind CSS, Shadcn, y CSS, integrándolas mediante APIs."
     },
     {
       "TITLE": "Soporte técnico",
@@ -58,6 +58,21 @@
       "DESCRIPTION": "App que ofrece a los usuarios la capacidad de realizar pagos, transferencias de manera eficiente.",
       "LINK": "buckspay.xyz",
       "GITHUB": "github.com/bucks-pay/buckspay_landing"
+    },
+    {
+      "IMAGE": "/constructtrack.png",
+      "TITLE": "Constructtrack",
+      "TAGS": [
+        "NEXT",
+        "TAILWIND",
+        "TYPESCRIPT",
+        "SHADCN",
+        "POSTGRESSQL",
+        "PRISMA"
+      ],
+      "DESCRIPTION": "ConstructTrack es un sistema completo de gestión de inventario diseñado específicamente para la industria de la construcción. Permite controlar materiales, registrar movimientos de entradas y salidas, gestionar categorías y ubicaciones, y generar alertas cuando el stock alcanza niveles críticos.",
+      "LINK": "constructtrack-rust.vercel.app",
+      "GITHUB": "github.com/alez2312p/constructtrack"
     }
   ],
   "ABOUT": {
