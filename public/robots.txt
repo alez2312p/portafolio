@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://alez2312p.dev/sitemap-index.xml
+Sitemap: https://alez2312p.dev/sitemap.xml
