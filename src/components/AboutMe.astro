@@ -1,42 +1,38 @@
 ---
 import ProfileCheckIcon from "../icons/ProfileCheck.astro";
+import { Image } from "astro:assets";
 import { getI18N } from "../i18n";
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
-const ABOUT = i18n.ABOUT
+const ABOUT = i18n.ABOUT;
 ---
 
-<div id="sobre-mi">
-  <h2
-    class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
-  >
-    <ProfileCheckIcon class="size-8" />
-    {i18n.HOME.ABOUT_ME}
-  </h2>
-  <article
-    class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row"
-  >
-    <div
-      class="[&>p]:mb-4 [&>p>strong]:text-yellow-500 dark:[&>p>strong]:text-yellow-100 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1"
+<div class="flex flex-col">
+  <div class="mb-12">
+    <h2
+      class="inline-flex items-center gap-3 text-2xl font-bold text-gray-100"
     >
-      <p>
-        {ABOUT.CONTENT1}
-      </p>
-      <p>
-        {ABOUT.CONTENT2}
-      </p>
-      <p>
-        {ABOUT.CONTENT3}
-      </p>
+      <ProfileCheckIcon class="size-6 text-emerald-400" />
+      {i18n.HOME.ABOUT_ME}
+      <span class="h-px flex-1 bg-gray-800 ml-2"></span>
+    </h2>
+  </div>
+
+  <div class="flex flex-col gap-8 md:flex-row md:items-start">
+    <div class="shrink-0">
+      <Image
+        alt="Alejandro P. Lezama"
+        class="size-24 rounded-2xl border border-gray-800 object-cover md:size-32"
+        src="/avatar-optimized.webp"
+        width={256}
+        height={256}
+      />
     </div>
 
-    <!-- <img
-      width="200"
-      height="200"
-      src="/me.png"
-      alt=""
-      class="order-1 object-cover w-64 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 dark:ring-white/20"
-      style="object-position: 50% 50%"
-    /> -->
-  </article>
+    <div class="flex-1 space-y-4 text-gray-400 leading-relaxed">
+      <p>{ABOUT.CONTENT1}</p>
+      <p>{ABOUT.CONTENT2}</p>
+      <p>{ABOUT.CONTENT3}</p>
+    </div>
+  </div>
 </div>

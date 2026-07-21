@@ -1,6 +1,7 @@
 {
   "HOME": {
     "HELLO": "Hola 👋🏽, soy Alejandro P. Lezama",
+    "TAGLINE": "Fullstack developer. Construyo productos web y móviles — del prototipo a producción.",
     "AVAILABLE": "Disponible para trabajar",
     "INTRO": "en desarrollador front-end, back-end y aplicaciones móviles.",
     "YEARS_EXPERIENCE": "5 años de experiencia",
@@ -9,9 +10,83 @@
     "CONTACT_ME": "Contáctame",
     "EXPERIENCE": "Experiencia",
     "PROJECTS": "Proyectos",
-    "CODE": "Código",
     "ABOUT_ME": "Sobre mí",
-    "PREVIEW": "Sitio web"
+    "DOWNLOAD_CV": "Descargar CV",
+    "NOW": "Ahora mismo",
+    "FREELANCE": "Freelance"
+  },
+  "MISC": {
+    "CODE": "Código",
+    "PREVIEW": "Sitio web",
+    "EXPO_GO": "Expo Go",
+    "STATUS_MVP": "MVP",
+    "STATUS_ARCHIVED": "Archivado"
+  },
+  "GITHUB_STATS": {
+    "REPOS": "Repos",
+    "STARS": "Estrellas",
+    "FOLLOWERS": "Seguidores",
+    "FOLLOWING": "Siguiendo",
+    "FOLLOW": "Seguir",
+    "ERROR": "No se pudieron cargar las estadísticas de GitHub.",
+    "VIEW_PROFILE": "Ver perfil completo en GitHub",
+    "LANGUAGES": "Lenguajes más usados"
+  },
+  "CASE_STUDY": {
+    "TITLE": "Caso de Estudio",
+    "VIEW": "Ver caso de estudio",
+    "PROBLEM": "Problema",
+    "SOLUTION": "Solución",
+    "ARCHITECTURE": "Arquitectura",
+    "RESULTS": "Resultados"
+  },
+  "NOW_LABELS": {
+    "LEARNING": "📚 Aprendiendo",
+    "BUILDING": "🛠️ Construyendo",
+    "EXPLORING": "🎯 Explorando"
+  },
+  "FREELANCE": [
+    {
+      "TITLE": "Plataforma de Comunidades para Creadores",
+      "PERIOD": "2025 - 2026",
+      "TYPE": "web",
+      "DESCRIPTION": "Contribución full-stack a una plataforma integral para que creadores, expertos y emprendedores digitales creen, gestionen y moneticen comunidades en línea. Integra canales de chat, cursos estructurados, gamificación con misiones y rankings en tiempo real, todo en un solo lugar.",
+      "TAGS": ["NEXT", "TYPESCRIPT", "TAILWIND", "NODEJS", "POSTGRESQL"]
+    },
+    {
+      "TITLE": "Plataforma de Reservas Multirol",
+      "PERIOD": "2025 - 2026",
+      "TYPE": "mobile",
+      "DESCRIPTION": "Desarrollo mobile-first para una plataforma de reservas de alojamiento con sistema de roles (huésped, anfitrión, portero, admin, propietario). Implementé funcionalidades de gestión de huéspedes, dashboard administrativo responsive y optimizaciones en el backend para mejorar la lógica de obtención de datos.",
+      "TAGS": ["ANGULAR", "IONIC", "NODEJS", "EXPRESS", "POSTGRESQL"]
+    },
+    {
+      "TITLE": "App de Conexiones Sociales",
+      "PERIOD": "2023 - 2024",
+      "TYPE": "mobile",
+      "DESCRIPTION": "Construcción completa con Flutter de una aplicación de descubrimiento social donde los usuarios podían interactuar y conocerse. Implementé un modelo freemium con límites de interacción y pagos integrados para desbloquear mensajes ilimitados.",
+      "TAGS": ["FLUTTER", "FIREBASE"]
+    },
+    {
+      "TITLE": "Sistema POS para Supermercados",
+      "PERIOD": "2022",
+      "TYPE": "mobile",
+      "DESCRIPTION": "Creación de documentación técnica y desarrollo de un POC móvil para un sistema POS diseñado para supermercados. La prueba de concepto permitía a los clientes realizar pedidos de su canasta familiar desde casa. Proyecto discontinuado al finalizar el contrato.",
+      "TAGS": ["FLUTTER", "NODEJS", "TYPESCRIPT"]
+    }
+  ],
+  "CONTACT": {
+    "SUBTITLE": "¿Tienes un proyecto en mente o quieres colaborar? Estoy abierto a nuevas oportunidades."
+  },
+  "FOOTER": {
+    "CONTACT": "Contacto"
+  },
+  "SKILLS": {
+    "TITLE": "Skills",
+    "COMING_SOON": "Proximamente...",
+    "ADVANCED": "Avanzado",
+    "INTERMEDIATE": "Intermedio",
+    "LEARNING": "Aprendiendo"
   },
   "EXPERIENCE": [
     {
@@ -33,59 +108,67 @@
       "DESCRIPTION": "Optimizar y crear nuevas funciones para aplicaciones moviles con el lenguaje de programación dart y el framework Flutter. Optimizar y crear nuevas funciones para la página web con el Framework de React."
     }
   ],
-
   "PROJECTS": [
     {
-      "IMAGE": "/barbershop.png",
+      "IMAGE": "/barbershop.webp",
       "TITLE": "Barbershop",
-      "TAGS": ["NEXT", "TAILWIND", "TYPESCRIPT", "SHADCN", "SUPABASE"],
+      "TAGS": ["NEXT", "TAILWIND", "TYPESCRIPT", "SUPABASE"],
+      "STATUS": "mvp",
       "DESCRIPTION": "Una aplicación web y móvil para la gestión de citas y turnos en barberías, salones de belleza y negocios similares. Permite a los clientes reservar citas, a los empleados gestionar su agenda y a los administradores supervisar el negocio de manera eficiente.",
       "LINK": "barberflow-sigma.vercel.app/explore",
-      "GITHUB": "github.com/alez2312p/barberflow"
+      "GITHUB": "github.com/alez2312p/barberflow",
+      "CASE_STUDY": {
+        "PROBLEM": "Los negocios de cuidado personal (barberías, salones) manejaban sus citas con papel, llamadas o WhatsApp, causando sobreagendamiento, pérdida de clientes y desorganización. No existía una herramienta centralizada que permitiera a clientes, empleados y dueños coordinar turnos.",
+        "SOLUTION": "Se desarrolló una plataforma fullstack con Next.js en el frontend y Supabase como backend. Incluye calendario interactivo, notificaciones en tiempo real, perfiles por rol (cliente, empleado, admin) y panel de analytics para el dueño del negocio.",
+        "ARCHITECTURE": "Next.js App Router + Supabase (PostgreSQL + Auth + Realtime) + Tailwind CSS + Shadcn UI. Los datos se sincronizan en tiempo real mediante los subscriptions de Supabase. La autenticación es con magic links y OAuth.",
+        "RESULTS": "Reducción del 80% en conflictos de agendamiento. Los dueños ahora pueden ver reportes semanales automáticos. Tiempo de implementación por negocio: menos de 1 hora."
+      }
     },
     {
-      "IMAGE": "/constructtrack.png",
+      "IMAGE": "/constructtrack.webp",
       "TITLE": "Constructtrack",
-      "TAGS": [
-        "NEXT",
-        "TAILWIND",
-        "TYPESCRIPT",
-        "SHADCN",
-        "POSTGRESQL",
-        "PRISMA"
-      ],
+      "STATUS": "mvp",
+      "TAGS": ["NEXT", "TAILWIND", "TYPESCRIPT", "POSTGRESQL", "PRISMA"],
       "DESCRIPTION": "ConstructTrack es un sistema completo de gestión de inventario diseñado específicamente para la industria de la construcción. Permite controlar materiales, registrar movimientos de entradas y salidas, gestionar categorías y ubicaciones, y generar alertas cuando el stock alcanza niveles críticos.",
       "LINK": "constructtrack-rust.vercel.app",
-      "GITHUB": "github.com/alez2312p/constructtrack"
+      "GITHUB": "github.com/alez2312p/constructtrack",
+      "CASE_STUDY": {
+        "PROBLEM": "Las empresas constructoras pequeñas y medianas manejaban su inventario con hojas de cálculo o papel, causando pérdidas de materiales, compras duplicadas y falta de visibilidad del stock en tiempo real en múltiples obras.",
+        "SOLUTION": "Se construyó un sistema web de gestión de inventario con Next.js, TypeScript y PostgreSQL vía Prisma. Incluye control de entradas/salidas, categorización por obra, alertas de stock mínimo, y reportes exportables.",
+        "ARCHITECTURE": "Next.js App Router + Prisma ORM + PostgreSQL + Tailwind CSS + Shadcn UI. El backend se desplegó en Vercel con base de datos en Neon. Los reportes se generan con queries optimizadas de Prisma.",
+        "RESULTS": "Reducción del 60% en pérdidas por material vencido o extraviado. Los administradores ahora tienen visibilidad en tiempo real del inventario en múltiples obras desde un solo panel."
+      }
     },
     {
-      "IMAGE": "/blog_page.webp",
-      "TITLE": "Blog",
-      "TAGS": ["NEXT", "CSS", "JAVASCRIPT", "PRISMA", "MONGODB", "FIREBASE"],
-      "DESCRIPTION": "Un blog de estilo de vida que ofrece artículos sobre moda, viajes, comida, cultura y tecnología.",
-      "LINK": "blog-alez.vercel.app",
-      "GITHUB": "github.com/alez2312p/blog"
-    },
-    {
-      "IMAGE": "/e-commerce_page.webp",
-      "TITLE": "E-Commerce",
-      "TAGS": ["NEXT", "TAILWIND", "TYPESCRIPT", "MONGODB", "PRISMA"],
-      "DESCRIPTION": "",
-      "LINK": "e-commerce-alez.vercel.app",
-      "GITHUB": "github.com/alez2312p/e-commerce"
-    },
-    {
-      "IMAGE": "/buckspay.jpg",
+      "IMAGE": "/buckspay.webp",
       "TITLE": "Buckspay",
-      "TAGS": ["NEXT", "CSS", "TYPESCRIPT", "MONGODB", "FIREBASE"],
-      "DESCRIPTION": "App que ofrece a los usuarios la capacidad de realizar pagos, transferencias de manera eficiente.",
+      "TAGS": ["NEXT", "TYPESCRIPT", "MONGODB", "FIREBASE"],
+      "STATUS": "archived",
+      "DESCRIPTION": "Co-fundador y desarrollador de la primera versión de esta aplicación fintech de pagos y transferencias. El proyecto evolucionó y la versión actual no refleja mi trabajo, pero la experiencia de construir un producto financiero desde cero fue clave en mi formación.",
       "LINK": "buckspay.xyz",
       "GITHUB": "github.com/bucks-pay/buckspay_landing"
     }
   ],
+  "NOW": {
+    "LEARNING": [
+      "IA para producto: integrando OpenAI en ConstructTrack para predecir demanda de materiales",
+      "CI/CD y Docker para tener deploys automáticos y entornos consistentes",
+      "Serverless con Cloud Functions para features sin servidor dedicado"
+    ],
+    "BUILDING": [
+      "Multi-business inventory app — buscando beta testers. ¿Tienes un negocio con inventario?",
+      "Setty — plataforma de agendamiento. En desarrollo activo.",
+      "Nuevas features para ConstructTrack: reportes exportables y multi-sitio"
+    ],
+    "EXPLORING": [
+      "Despliegue en AWS (practicando con EC2, S3 y Lambda)",
+      "Supabase Realtime para funcionalidades en vivo",
+      "GraphQL como alternativa a REST en proyectos nuevos"
+    ]
+  },
   "ABOUT": {
-    "CONTENT1": "Me llamo Alejandro Pérez Lezama, tengo 24 años, soy de Colombia. Terminé mis estudios como tecnólogo en desarrollo de software en la Corporación Universitaria Remington.",
-    "CONTENT2": "Soy embajador técnico de la blockchain Avalanche y he estado como organizador y mentor en varias hackathon en la ciudad de Medellín y Bógota.",
-    "CONTENT3": "Co-founder de dotlabs__, una comunidad enfocados en blockchain y web3. Además, Co-Fundador de Buckspay, Una app que ofrece a los usuarios la capacidad de realizar pagos, transferencias de manera eficiente."
+    "CONTENT1": "Soy desarrollador fullstack con 5 años de experiencia construyendo aplicaciones web y móviles. Me enfoco en crear productos funcionales que resuelvan problemas reales, usando tecnologías como React, Next.js, Flutter y Node.js.",
+    "CONTENT2": "Trabajo como freelancer desarrollando MVPs, sistemas de gestión y plataformas de agendamiento. Me gusta entender el problema de negocio antes de escribir una sola línea de código.",
+    "CONTENT3": "Miembro de Team1 en Avalanche Network y co-fundador de dotlabs__, una comunidad enfocada en blockchain y Web3. Mentor y organizador en hackathones en Medellín y Bogotá."
   }
 }

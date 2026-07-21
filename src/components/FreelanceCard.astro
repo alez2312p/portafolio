@@ -1,0 +1,51 @@
+---
+import TypeBadge from "./TypeBadge.astro";
+import { TAGSLIST } from "./Tags.astro";
+
+type TagKey = keyof typeof TAGSLIST;
+
+interface Props {
+  TITLE: string;
+  PERIOD: string;
+  DESCRIPTION: string;
+  TAGS: TagKey[];
+  TYPE: "web" | "mobile" | "backend";
+}
+
+const { TITLE, PERIOD, DESCRIPTION, TAGS: freelanceTags, TYPE } = Astro.props;
+---
+
+<article class="group relative rounded-xl border border-gray-800 bg-gray-900/50 p-6 transition hover:border-emerald-500/30 hover:bg-gray-900 hover:shadow-lg hover:shadow-emerald-500/5">
+  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-500/20 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+
+  <div class="flex items-start justify-between gap-2 mb-3">
+    <div>
+      <span class="inline-flex items-center gap-1.5 rounded-md bg-emerald-500/10 px-2 py-0.5 text-xs font-mono text-emerald-400">
+        {PERIOD}
+      </span>
+    </div>
+    <TypeBadge type={TYPE} />
+  </div>
+
+  <h3 class="text-lg font-semibold text-gray-100 group-hover:text-emerald-400 transition-colors mb-3">
+    {TITLE}
+  </h3>
+
+  <p class="text-sm text-gray-400 leading-relaxed mb-4">
+    {DESCRIPTION}
+  </p>
+
+  <div class="flex flex-wrap gap-1.5">
+    {freelanceTags.map((tag) => {
+      const tagData = TAGSLIST[tag];
+      return (
+        <span
+          class={`inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-xs ${tagData.class}`}
+        >
+          <tagData.icon class="size-3" />
+          {tagData.name}
+        </span>
+      );
+    })}
+  </div>
+</article>

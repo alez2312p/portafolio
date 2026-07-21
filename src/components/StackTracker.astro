@@ -1,0 +1,67 @@
+<div id="stack-tracker" class="fixed right-4 top-1/2 -translate-y-1/2 z-40 hidden lg:block">
+  <div class="flex flex-col items-center gap-3 rounded-xl border border-gray-800 bg-gray-950/80 px-3 py-4 backdrop-blur-sm">
+    <div class="stack-dot size-2 rounded-full bg-gray-600 transition-colors duration-300"></div>
+    <div class="stack-dot size-2 rounded-full bg-gray-600 transition-colors duration-300"></div>
+    <div class="stack-dot size-2 rounded-full bg-gray-600 transition-colors duration-300"></div>
+    <div class="stack-dot size-2 rounded-full bg-gray-600 transition-colors duration-300"></div>
+    <div class="stack-dot size-2 rounded-full bg-gray-600 transition-colors duration-300"></div>
+    <div class="stack-dot size-2 rounded-full bg-gray-600 transition-colors duration-300"></div>
+    <div class="stack-dot size-2 rounded-full bg-gray-600 transition-colors duration-300"></div>
+    <div class="stack-dot size-2 rounded-full bg-gray-600 transition-colors duration-300"></div>
+  </div>
+  <div id="stack-label" class="absolute right-full mr-3 top-1/2 -translate-y-1/2 w-max opacity-0 transition-opacity duration-300">
+    <div class="rounded-lg border border-gray-800 bg-gray-950 px-3 py-2 text-xs text-gray-400 whitespace-nowrap">
+      <span id="stack-section-label" class="text-emerald-400 font-semibold">Experience</span>
+      <span id="stack-tech-label" class="block text-gray-500 mt-0.5">React · Next.js · TypeScript</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  const sections = [
+    { id: "skills", label: "Skills", tech: "20+ tecnologías" },
+    { id: "projects", label: "Projects", tech: "Next.js · Supabase · Prisma" },
+    { id: "freelance", label: "Freelance", tech: "Flutter · Next.js · Node.js" },
+    { id: "experience", label: "Experience", tech: "React · Next.js · TypeScript" },
+    { id: "about", label: "About", tech: "Fullstack · Web3 · Community" },
+    { id: "now", label: "Right now", tech: "IA · Docker · Serverless" },
+    { id: "contact", label: "Contact", tech: "alejandropl2509@gmail.com" },
+  ];
+
+  const dots = document.querySelectorAll(".stack-dot");
+  const label = document.getElementById("stack-label");
+  const sectionLabel = document.getElementById("stack-section-label");
+  const techLabel = document.getElementById("stack-tech-label");
+
+  if (!label || !sectionLabel || !techLabel) { /* noop */ } else {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        let active = -1;
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            const idx = sections.findIndex((s) => s.id === entry.target.id);
+            if (idx >= 0) active = idx;
+          }
+        }
+        if (active >= 0) {
+          for (let i = 0; i < dots.length; i++) {
+            dots[i].className =
+              i === active
+                ? "stack-dot size-2 rounded-full bg-emerald-400 transition-colors duration-300"
+                : "stack-dot size-2 rounded-full bg-gray-600 transition-colors duration-300";
+          }
+          sectionLabel.textContent = sections[active].label;
+          techLabel.textContent = sections[active].tech;
+          label.classList.remove("opacity-0");
+          label.classList.add("opacity-100");
+        }
+      },
+      { threshold: 0.3, rootMargin: "-80px 0px 0px 0px" }
+    );
+
+    for (const section of sections) {
+      const el = document.getElementById(section.id);
+      if (el) observer.observe(el);
+    }
+  }
+</script>

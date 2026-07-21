@@ -1,0 +1,83 @@
+---
+import Badge from "./Badge.astro";
+import LinkedInIcon from "../icons/LinkedIn.astro";
+import MailIcon from "../icons/Mail.astro";
+import DownloadIcon from "../icons/Download.astro";
+import { getI18N } from "../i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
+<section class="relative flex min-h-[90vh] items-center justify-center overflow-hidden px-4">
+  <div
+    class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.06),transparent_60%)]"
+  >
+  </div>
+
+  <div class="relative mx-auto max-w-3xl text-center">
+    <div class="mb-6 flex justify-center">
+      <a
+        href="https://linkedin.com/in/alejandro-perez-lezama"
+        target="_blank"
+        rel="noopener"
+        class="transition hover:scale-105"
+      >
+        <Badge>{i18n.HOME.AVAILABLE}</Badge>
+      </a>
+    </div>
+
+    <h1 class="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+      <span class="text-gray-100">{i18n.HOME.HELLO}</span>
+    </h1>
+
+    <p class="mt-4 text-lg text-gray-300 sm:text-xl font-medium">
+      {i18n.HOME.TAGLINE}
+    </p>
+
+    <p class="mt-6 text-lg text-gray-400 sm:text-xl max-w-2xl mx-auto leading-relaxed">
+      <strong class="font-mono text-emerald-400 font-semibold"
+        >{i18n.HOME.YEARS_EXPERIENCE}</strong
+      >
+      {i18n.HOME.INTRO}
+      <strong class="font-mono text-emerald-400 font-semibold"
+        >{i18n.HOME.JOB_TITLE}</strong
+      >
+      {i18n.HOME.CONTENT}
+    </p>
+
+    <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+      <a
+        href="mailto:alejandropl2509@gmail.com"
+        class="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-6 py-3 text-sm font-medium text-white transition hover:bg-emerald-400 hover:shadow-lg hover:shadow-emerald-500/25"
+      >
+        <MailIcon class="size-4" />
+        {i18n.HOME.CONTACT_ME}
+      </a>
+      <a
+        href="https://www.linkedin.com/in/alejandro-perez-lezama/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 rounded-xl border border-gray-700 bg-gray-900 px-6 py-3 text-sm font-medium text-gray-300 transition hover:border-emerald-500/50 hover:text-emerald-400 hover:bg-gray-800"
+      >
+        <LinkedInIcon class="size-4" />
+        LinkedIn
+      </a>
+      <a
+        href="/Cv Alejandro P Lezama.pdf"
+        download
+        class="inline-flex items-center gap-2 rounded-xl border border-gray-700 bg-gray-900 px-6 py-3 text-sm font-medium text-gray-300 transition hover:border-emerald-500/50 hover:text-emerald-400 hover:bg-gray-800"
+      >
+        <DownloadIcon class="size-4" />
+        {i18n.HOME.DOWNLOAD_CV}
+      </a>
+    </div>
+
+    <div class="mt-16 flex justify-center">
+      <a href="#experience" class="animate-bounce text-gray-500 hover:text-emerald-400 transition-colors">
+        <svg class="size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

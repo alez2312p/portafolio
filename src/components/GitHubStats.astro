@@ -1,0 +1,180 @@
+---
+import CodeIcon from "../icons/Code.astro";
+import { getI18N } from "../i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
+const USERNAME = "alez2312p";
+
+interface Repo {
+  stargazers_count: number;
+  fork: boolean;
+  language: string | null;
+}
+
+interface GitHubUser {
+  public_repos: number;
+  followers: number;
+  following: number;
+}
+
+let user: GitHubUser = { public_repos: 0, followers: 0, following: 0 };
+let repos: Repo[] = [];
+let error = false;
+
+try {
+  const [userRes, reposRes] = await Promise.all([
+    fetch(`https://api.github.com/users/${USERNAME}`),
+    fetch(`https://api.github.com/users/${USERNAME}/repos?per_page=100&sort=updated`),
+  ]);
+
+  if (userRes.ok && reposRes.ok) {
+    user = await userRes.json();
+    repos = await reposRes.json();
+  } else {
+    error = true;
+  }
+} catch {
+  error = true;
+}
+
+const totalStars = repos
+  .filter((r) => !r.fork)
+  .reduce((sum, r) => sum + r.stargazers_count, 0);
+
+const langCount: Record<string, number> = {};
+repos
+  .filter((r) => r.language)
+  .forEach((r) => {
+    langCount[r.language!] = (langCount[r.language!] || 0) + 1;
+  });
+
+const topLangs = Object.entries(langCount)
+  .sort(([, a], [, b]) => b - a)
+  .slice(0, 6);
+
+const totalBytes = topLangs.reduce((sum, [, count]) => sum + count, 0);
+
+const langColors: Record<string, string> = {
+  JavaScript: "#f7df1e",
+  TypeScript: "#3178c6",
+  Python: "#3572A5",
+  CSS: "#563d7c",
+  HTML: "#e34c26",
+  Dart: "#00B4AB",
+  Java: "#b07219",
+  Kotlin: "#A97BFF",
+  Swift: "#F05138",
+  Go: "#00ADD8",
+  Rust: "#dea584",
+  PHP: "#4F5D95",
+  Ruby: "#701516",
+  "C#": "#178600",
+  Shell: "#89e051",
+  Dockerfile: "#384d54",
+};
+
+const formatNumber = (n: number) => {
+  if (n >= 1000) return (n / 1000).toFixed(1).replace(/\.0$/, "") + "k";
+  return n.toString();
+};
+
+const gs = i18n.GITHUB_STATS;
+---
+
+<div class="flex flex-col">
+  <div class="mb-12">
+    <h2 class="inline-flex items-center gap-3 text-2xl font-bold text-gray-100">
+      <CodeIcon class="size-6 text-emerald-400" />
+      GitHub
+      <span class="h-px flex-1 bg-gray-800 ml-2"></span>
+    </h2>
+  </div>
+
+  {error ? (
+    <div class="rounded-xl border border-gray-800 bg-gray-900/50 p-6 text-center">
+      <p class="text-sm text-gray-500">
+        {gs.ERROR}
+        <a
+          href={`https://github.com/${USERNAME}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-emerald-400 hover:underline ml-1"
+        >
+          {gs.VIEW_PROFILE}
+        </a>
+      </p>
+    </div>
+  ) : (
+    <div class="rounded-xl border border-gray-800 bg-gray-900/50 p-6">
+      <div class="flex items-center justify-between border-b border-gray-800 pb-4 mb-4">
+        <div class="flex items-center gap-3">
+          <div class="flex size-10 items-center justify-center rounded-lg bg-gray-800">
+            <span class="text-sm font-bold text-emerald-400 font-mono">AP</span>
+          </div>
+          <div>
+            <p class="text-sm font-medium text-gray-100">{USERNAME}</p>
+            <p class="text-xs text-gray-500">{formatNumber(totalStars)} {gs.STARS.toLowerCase()} · {user.public_repos} {gs.REPOS.toLowerCase()}</p>
+          </div>
+        </div>
+        <a
+          href={`https://github.com/${USERNAME}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="rounded-lg border border-gray-700 px-3 py-1.5 text-xs text-gray-400 transition hover:border-emerald-500/50 hover:text-emerald-400"
+        >
+          {gs.FOLLOW}
+        </a>
+      </div>
+
+      <div class="flex items-center justify-around text-center">
+        <div>
+          <p class="text-lg font-bold text-gray-100 font-mono">{formatNumber(user.public_repos)}</p>
+          <p class="text-xs text-gray-500">{gs.REPOS}</p>
+        </div>
+        <div class="h-8 w-px bg-gray-800"></div>
+        <div>
+          <p class="text-lg font-bold text-gray-100 font-mono">{formatNumber(totalStars)}</p>
+          <p class="text-xs text-gray-500">{gs.STARS}</p>
+        </div>
+        <div class="h-8 w-px bg-gray-800"></div>
+        <div>
+          <p class="text-lg font-bold text-gray-100 font-mono">{formatNumber(user.followers)}</p>
+          <p class="text-xs text-gray-500">{gs.FOLLOWERS}</p>
+        </div>
+        <div class="h-8 w-px bg-gray-800"></div>
+        <div>
+          <p class="text-lg font-bold text-gray-100 font-mono">{formatNumber(user.following)}</p>
+          <p class="text-xs text-gray-500">{gs.FOLLOWING}</p>
+        </div>
+      </div>
+
+      {topLangs.length > 0 && (
+        <div class="mt-4 pt-4 border-t border-gray-800">
+          <p class="text-xs text-gray-500 mb-2">{gs.LANGUAGES}</p>
+          <div class="flex h-2 overflow-hidden rounded-full bg-gray-800">
+            {topLangs.map(([lang, count]) => (
+              <div
+                class="h-full transition-all"
+                style={`width: ${(count / totalBytes) * 100}%; background-color: ${langColors[lang] || "#6b7280"}`}
+                title={`${lang}: ${Math.round((count / totalBytes) * 100)}%`}
+              ></div>
+            ))}
+          </div>
+          <div class="mt-3 flex flex-wrap gap-x-4 gap-y-1">
+            {topLangs.map(([lang, count]) => (
+              <span class="inline-flex items-center gap-1.5 text-xs text-gray-400">
+                <span
+                  class="inline-block size-2 rounded-full"
+                  style={`background-color: ${langColors[lang] || "#6b7280"}`}
+                ></span>
+                {lang}
+                <span class="text-gray-600">{Math.round((count / totalBytes) * 100)}%</span>
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  )}
+</div>

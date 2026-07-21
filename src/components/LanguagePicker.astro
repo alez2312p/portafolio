@@ -11,7 +11,7 @@ const translatePath = useTranslatedPath(lang);
 Object.entries(languages).map(([langPrefiex, label]) => {
     if (langPrefiex === lang) return <></>
     return(<a
-    class="relative block py-2 transition hover:text-red-500 dark:hover:text-red-400"
+    class="relative block px-2 py-2 text-sm transition text-gray-400 hover:text-emerald-400"
      href={translatePath("/", langPrefiex)}>{label}</a>)
     })
 }

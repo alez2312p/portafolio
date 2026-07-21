@@ -1,0 +1,139 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils.ts";
+import LanguagePicker from "./LanguagePicker.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const navItems = [
+  { title: t("nav.projects"), label: "projects", url: "/#projects" },
+  { title: t("nav.freelance"), label: "freelance", url: "/#freelance" },
+  { title: t("nav.experience"), label: "experience", url: "/#experience" },
+  { title: t("nav.about"), label: "about", url: "/#about" },
+  { title: t("nav.contact"), label: "contact", url: "mailto:alejandropl2509@gmail.com" },
+];
+---
+
+<header
+  id="navbar"
+  class="fixed top-0 right-0 left-0 z-50 bg-gray-950/80 backdrop-blur-md transition-transform duration-300"
+>
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="flex items-center justify-between py-4">
+      <a
+        href="/"
+        class="text-lg font-semibold tracking-tight text-gray-100 hover:text-emerald-400 transition-colors"
+      >
+        alez2312p<span class="text-emerald-400">.</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-1">
+        {navItems.map((link) => (
+          <a
+            class="nav-link relative px-3 py-2 text-sm text-gray-400 hover:text-emerald-400 transition-colors"
+            aria-label={link.label}
+            href={link.url}
+          >
+            {link.title}
+          </a>
+        ))}
+        <div class="ml-2 flex items-center">
+          <LanguagePicker />
+        </div>
+      </nav>
+
+      <div class="flex md:hidden items-center gap-2">
+        <LanguagePicker />
+        <button id="mobile-menu-btn" class="text-gray-400 hover:text-emerald-400 p-2" aria-label="Menu">
+          <svg id="menu-open-icon" class="size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="menu-close-icon" class="size-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div
+    id="mobile-menu"
+    class="fixed inset-x-0 top-[57px] bottom-0 z-40 hidden bg-gray-950/95 backdrop-blur-md md:hidden"
+  >
+    <nav class="flex flex-col items-center gap-2 pt-12 px-4">
+      {navItems.map((link) => (
+        <a
+          class="mobile-nav-link w-full max-w-xs rounded-xl border border-gray-800 bg-gray-900/80 px-6 py-4 text-center text-base text-gray-300 transition hover:border-emerald-500/50 hover:text-emerald-400"
+          aria-label={link.label}
+          href={link.url}
+        >
+          {link.title}
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>
+
+<script>
+  let lastScroll = 0;
+  const navbar = document.getElementById("navbar")!;
+  const mobileMenu = document.getElementById("mobile-menu")!;
+  const menuBtn = document.getElementById("mobile-menu-btn")!;
+  const menuOpenIcon = document.getElementById("menu-open-icon")!;
+  const menuCloseIcon = document.getElementById("menu-close-icon")!;
+  let menuOpen = false;
+
+  const handleScroll = () => {
+    const currentScroll = window.scrollY;
+    if (currentScroll > lastScroll && currentScroll > 100 && !menuOpen) {
+      navbar.style.transform = "translateY(-100%)";
+    } else {
+      navbar.style.transform = "translateY(0)";
+    }
+    lastScroll = currentScroll;
+  };
+
+  window.addEventListener("scroll", handleScroll, { passive: true });
+
+  const toggleMenu = () => {
+    menuOpen = !menuOpen;
+    mobileMenu.classList.toggle("hidden", !menuOpen);
+    menuOpenIcon.classList.toggle("hidden", menuOpen);
+    menuCloseIcon.classList.toggle("hidden", !menuOpen);
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    if (menuOpen) navbar.style.transform = "translateY(0)";
+  };
+
+  menuBtn.addEventListener("click", toggleMenu);
+
+  document.querySelectorAll(".mobile-nav-link").forEach((link) => {
+    link.addEventListener("click", () => {
+      if (menuOpen) toggleMenu();
+    });
+  });
+
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navLinks.forEach((link) => {
+            link.classList.toggle(
+              "text-emerald-400",
+              link.getAttribute("aria-label") === entry.target.id,
+            );
+            link.classList.toggle(
+              "text-gray-400",
+              link.getAttribute("aria-label") !== entry.target.id,
+            );
+          });
+        }
+      });
+    },
+    { rootMargin: "-50% 0px -50% 0px" },
+  );
+
+  sections.forEach((section) => observer.observe(section));
+</script>

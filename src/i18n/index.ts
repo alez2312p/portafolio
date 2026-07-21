@@ -7,12 +7,10 @@ const LANG = {
 };
 
 export const getI18N = ({
-  currentLocale = "es",
+  currentLocale = "en",
 }: {
   currentLocale: string | undefined;
 }) => {
   if (currentLocale === LANG.ENGLISH) return { ...spanish, ...english };
   return spanish;
 };
-
-// 4.260.000, 3.520.000

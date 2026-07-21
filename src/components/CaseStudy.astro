@@ -1,0 +1,132 @@
+---
+import { getI18N } from "../i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
+interface Props {
+  PROBLEM: string;
+  SOLUTION: string;
+  ARCHITECTURE: string;
+  RESULTS: string;
+}
+
+const { PROBLEM, SOLUTION, ARCHITECTURE, RESULTS } = Astro.props;
+
+const cs = i18n.CASE_STUDY;
+---
+
+<button
+  class="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg border border-gray-700 bg-gray-900/80 px-4 py-2.5 text-sm font-medium text-gray-300 transition hover:border-emerald-500/50 hover:text-emerald-400 hover:bg-gray-800"
+  data-case-study-btn
+>
+  <svg
+    class="size-4 text-emerald-400"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+  </svg>
+  {cs.VIEW}
+</button>
+
+<dialog
+  class="fixed inset-0 z-50 m-auto max-h-[85vh] max-w-2xl rounded-2xl border border-gray-800 bg-gray-950 p-0 text-gray-100 backdrop:bg-black/70 open:flex open:flex-col"
+  data-case-study-dialog
+>
+  <div
+    class="flex items-center justify-between border-b border-gray-800 px-6 py-4"
+  >
+    <h3
+      class="text-lg font-semibold text-gray-100"
+      style="font-family: 'Outfit Variable', 'Outfit', sans-serif; letter-spacing: -0.02em"
+    >
+      {cs.TITLE}
+    </h3>
+    <button
+      class="rounded-lg p-1.5 text-gray-400 transition hover:bg-gray-800 hover:text-gray-200"
+      data-case-study-close
+    >
+      <svg class="size-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+
+  <div class="flex-1 space-y-5 overflow-y-auto px-6 py-5 text-sm text-gray-400">
+    <div>
+      <h4 class="mb-1.5 font-semibold text-emerald-400 text-base">
+        {cs.PROBLEM}
+      </h4>
+      <p class="leading-relaxed">{PROBLEM}</p>
+    </div>
+    <div>
+      <h4 class="mb-1.5 font-semibold text-emerald-400 text-base">
+        {cs.SOLUTION}
+      </h4>
+      <p class="leading-relaxed">{SOLUTION}</p>
+    </div>
+    <div>
+      <h4 class="mb-1.5 font-semibold text-emerald-400 text-base">
+        {cs.ARCHITECTURE}
+      </h4>
+      <p class="leading-relaxed">{ARCHITECTURE}</p>
+    </div>
+    <!-- <div>
+      <h4 class="mb-1.5 font-semibold text-emerald-400 text-base">
+        {cs.RESULTS}
+      </h4>
+      <p class="leading-relaxed">{RESULTS}</p>
+    </div> -->
+  </div>
+</dialog>
+
+<script>
+  document.addEventListener("click", function (e) {
+    const btn = (e.target as HTMLElement).closest("[data-case-study-btn]");
+    if (!btn) return;
+    const dialog = btn.parentElement?.querySelector("[data-case-study-dialog]");
+    if (dialog instanceof HTMLDialogElement) {
+      dialog.showModal();
+      document.body.style.overflow = "hidden";
+    }
+  });
+
+  document.addEventListener("click", function (e) {
+    const target = e.target;
+    if (
+      target instanceof HTMLElement &&
+      target.closest("[data-case-study-close]")
+    ) {
+      const dialog = target.closest("[data-case-study-dialog]");
+      if (dialog instanceof HTMLDialogElement) {
+        dialog.close();
+        document.body.style.overflow = "";
+      }
+    }
+  });
+
+  document.addEventListener("click", function (e) {
+    const dialog = e.target;
+    if (dialog instanceof HTMLDialogElement && dialog.hasAttribute("open")) {
+      const rect = dialog.getBoundingClientRect();
+      if (
+        e.clientX < rect.left ||
+        e.clientX > rect.right ||
+        e.clientY < rect.top ||
+        e.clientY > rect.bottom
+      ) {
+        dialog.close();
+        document.body.style.overflow = "";
+      }
+    }
+  });
+</script>

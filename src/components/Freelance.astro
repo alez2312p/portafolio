@@ -1,0 +1,45 @@
+---
+import CodeIcon from "../icons/Code.astro";
+import FreelanceCard from "./FreelanceCard.astro";
+import { getI18N } from "../i18n";
+import { TAGSLIST } from "./Tags.astro";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
+type TagKey = keyof typeof TAGSLIST;
+
+interface FreelanceItem {
+  TITLE: string;
+  PERIOD: string;
+  DESCRIPTION: string;
+  TAGS: TagKey[];
+  TYPE: "web" | "mobile" | "backend";
+}
+
+const FREELANCE: FreelanceItem[] = i18n.FREELANCE.map((item: any) => ({
+  ...item,
+  TAGS: item.TAGS as TagKey[],
+  TYPE: item.TYPE as "web" | "mobile" | "backend",
+}));
+---
+
+<div class="flex flex-col">
+  <div class="mb-12">
+    <h2
+      class="inline-flex items-center gap-3 text-2xl font-bold text-gray-100"
+    >
+      <CodeIcon class="size-6 text-emerald-400" />
+      {i18n.HOME.FREELANCE}
+      <span class="h-px flex-1 bg-gray-800 ml-2"></span>
+    </h2>
+  </div>
+
+  <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    {
+      FREELANCE.map((item) => (
+        <FreelanceCard {...item} />
+      ))
+    }
+  </div>
+</div>

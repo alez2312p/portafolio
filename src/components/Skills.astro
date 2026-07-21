@@ -1,0 +1,86 @@
+---
+import CodeIcon from "../icons/Code.astro";
+import { TAGSLIST, type SkillLevel } from "./Tags.astro";
+import { getI18N } from "../i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
+type TagKey = keyof typeof TAGSLIST;
+
+const dotColors: Record<SkillLevel, string> = {
+  advanced: "bg-emerald-400",
+  intermediate: "bg-amber-400",
+  learning: "bg-gray-500",
+};
+
+const skills: { category: string; items: TagKey[] }[] = [
+  {
+    category: "Frontend",
+    items: ["REACT", "NEXT", "ASTRO", "ANGULAR", "TYPESCRIPT", "TAILWIND"],
+  },
+  {
+    category: "Mobile",
+    items: ["FLUTTER", "REACTNATIVE", "IONIC"],
+  },
+  {
+    category: "Backend",
+    items: ["NODEJS", "EXPRESS", "NESTJS", "PRISMA"],
+  },
+  {
+    category: "Database",
+    items: ["MONGODB", "POSTGRESQL", "FIREBASE", "SUPABASE"],
+  },
+];
+---
+
+<div class="flex flex-col">
+  <div class="mb-12">
+    <h2 class="inline-flex items-center gap-3 text-2xl font-bold text-gray-100">
+      <CodeIcon class="size-6 text-emerald-400" />
+      {i18n.SKILLS.TITLE}
+      <span class="h-px flex-1 bg-gray-800 ml-2"></span>
+    </h2>
+  </div>
+
+  <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    {skills.map(({ category, items }) => (
+      <div class="rounded-xl border border-gray-800 bg-gray-900/50 p-5">
+        <h3 class="text-sm font-semibold text-gray-300 mb-4">{category}</h3>
+        {items.length > 0 ? (
+          <div class="flex flex-wrap gap-2">
+            {items.map((key) => {
+              const tag = TAGSLIST[key];
+              const level = tag.level ?? "intermediate";
+              return (
+                <span
+                  class={`inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-medium ${tag.class} transition`}
+                >
+                  <span class={`inline-block size-1.5 rounded-full shrink-0 ${dotColors[level]}`}></span>
+                  <tag.icon class="size-3.5" />
+                  {tag.name}
+                </span>
+              );
+            })}
+          </div>
+        ) : (
+          <p class="text-sm text-gray-500">{i18n.SKILLS.COMING_SOON}</p>
+        )}
+      </div>
+    ))}
+  </div>
+
+  <div class="mt-6 flex items-center justify-center gap-5 text-xs text-gray-500">
+    <span class="inline-flex items-center gap-1.5">
+      <span class="inline-block size-2 rounded-full bg-emerald-400"></span>
+      {i18n.SKILLS.ADVANCED}
+    </span>
+    <span class="inline-flex items-center gap-1.5">
+      <span class="inline-block size-2 rounded-full bg-amber-400"></span>
+      {i18n.SKILLS.INTERMEDIATE}
+    </span>
+    <span class="inline-flex items-center gap-1.5">
+      <span class="inline-block size-2 rounded-full bg-gray-500"></span>
+      {i18n.SKILLS.LEARNING}
+    </span>
+  </div>
+</div>

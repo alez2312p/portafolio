@@ -1,24 +1,109 @@
 ---
 import SectionContainer from "../SectionContainer.astro";
+import ScrollReveal from "../ScrollReveal.astro";
+import Navbar from "../Navbar.astro";
+import HeroSection from "../HeroSection.astro";
 import Experience from "../Experience.astro";
+import Skills from "../Skills.astro";
+import GitHubStats from "../GitHubStats.astro";
 import Projects from "../Projects.astro";
-import Hero from "../Hero.astro";
+import Freelance from "../Freelance.astro";
 import AboutMe from "../AboutMe.astro";
+import NowSection from "../NowSection.astro";
+import Contact from "../Contact.astro";
+import Footer from "../Footer.astro";
+import StackTracker from "../StackTracker.astro";
 ---
 
-<main class="px-4">
-  <SectionContainer class="py-16 md:py-36">
-    <Hero />
-  </SectionContainer>
-  <div class="space-y-24">
-    <SectionContainer id="experience">
-      <Experience />
+<Navbar slot="header" />
+
+<StackTracker />
+
+<HeroSection />
+
+<div>
+  <ScrollReveal>
+    <SectionContainer id="skills" class="pt-16 md:pt-24">
+      <Skills />
     </SectionContainer>
-    <SectionContainer id="projects">
+  </ScrollReveal>
+
+  <div
+    class="h-px bg-gradient-to-r from-transparent via-emerald-500/10 to-transparent mx-auto max-w-2xl"
+  >
+  </div>
+
+  <ScrollReveal>
+    <SectionContainer id="projects" class="pt-16 md:pt-24">
       <Projects />
     </SectionContainer>
-    <SectionContainer id="about">
+  </ScrollReveal>
+
+  <div
+    class="h-px bg-gradient-to-r from-transparent via-emerald-500/10 to-transparent mx-auto max-w-2xl"
+  >
+  </div>
+
+  <ScrollReveal>
+    <SectionContainer id="freelance" class="pt-16 md:pt-24">
+      <Freelance />
+    </SectionContainer>
+  </ScrollReveal>
+
+  <div
+    class="h-px bg-gradient-to-r from-transparent via-emerald-500/10 to-transparent mx-auto max-w-2xl"
+  >
+  </div>
+
+  <ScrollReveal>
+    <SectionContainer id="experience" class="pt-16 md:pt-24">
+      <Experience />
+    </SectionContainer>
+  </ScrollReveal>
+
+  <div
+    class="h-px bg-gradient-to-r from-transparent via-emerald-500/10 to-transparent mx-auto max-w-2xl"
+  >
+  </div>
+
+  <ScrollReveal>
+    <SectionContainer id="about" class="pt-16 md:pt-24">
       <AboutMe />
     </SectionContainer>
+  </ScrollReveal>
+
+  <div
+    class="h-px bg-gradient-to-r from-transparent via-emerald-500/10 to-transparent mx-auto max-w-2xl"
+  >
   </div>
-</main>
+
+  <ScrollReveal>
+    <SectionContainer id="github-stats" class="pt-16 md:pt-24">
+      <GitHubStats />
+    </SectionContainer>
+  </ScrollReveal>
+
+  <div
+    class="h-px bg-gradient-to-r from-transparent via-emerald-500/10 to-transparent mx-auto max-w-2xl"
+  >
+  </div>
+
+  <ScrollReveal>
+    <SectionContainer id="now" class="pt-16 md:pt-24">
+      <NowSection />
+    </SectionContainer>
+  </ScrollReveal>
+
+  <div
+    class="h-px bg-gradient-to-r from-transparent via-emerald-500/10 to-transparent mx-auto max-w-2xl"
+  >
+  </div>
+
+  <ScrollReveal>
+    <SectionContainer id="contact" class="pt-16 md:pt-24">
+      <Contact />
+    </SectionContainer>
+  </ScrollReveal>
+</div>
+
+<Footer slot="footer" />

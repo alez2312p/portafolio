@@ -1,0 +1,45 @@
+---
+import MailIcon from "../icons/Mail.astro";
+import LinkedInIcon from "../icons/LinkedIn.astro";
+import GitHubIcon from "../icons/GitHub.astro";
+import { getI18N } from "../i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
+<div class="flex flex-col items-center text-center">
+  <h2 class="text-2xl font-bold text-gray-100 mb-4">
+    {i18n.HOME.CONTACT_ME}
+  </h2>
+  <p class="text-gray-400 max-w-md mb-8">
+    {i18n.CONTACT.SUBTITLE}
+  </p>
+
+  <div class="flex flex-wrap items-center justify-center gap-4">
+    <a
+      href="mailto:alejandropl2509@gmail.com"
+      class="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-6 py-3 text-sm font-medium text-white transition hover:bg-emerald-400 hover:shadow-lg hover:shadow-emerald-500/25"
+    >
+      <MailIcon class="size-4" />
+      alejandropl2509@gmail.com
+    </a>
+    <a
+      href="https://www.linkedin.com/in/alejandro-perez-lezama/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-2 rounded-xl border border-gray-700 bg-gray-900 px-6 py-3 text-sm font-medium text-gray-300 transition hover:border-emerald-500/50 hover:text-emerald-400"
+    >
+      <LinkedInIcon class="size-4" />
+      LinkedIn
+    </a>
+    <a
+      href="https://github.com/alez2312p"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-2 rounded-xl border border-gray-700 bg-gray-900 px-6 py-3 text-sm font-medium text-gray-300 transition hover:border-emerald-500/50 hover:text-emerald-400"
+    >
+      <GitHubIcon class="size-4" />
+      GitHub
+    </a>
+  </div>
+</div>

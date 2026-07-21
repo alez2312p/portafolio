@@ -1,7 +1,5 @@
 ---
 import NextJSIcon from "../icons/NextJS.astro";
-import CssIcon from "../icons/Css.astro";
-import JavaScriptIcon from "../icons/JavaScript.astro";
 import TypeScriptIcon from "../icons/TypeScript.astro";
 import TailwindIcon from "../icons/Tailwind.astro";
 import PrismaIcon from "../icons/Prisma.astro";
@@ -9,63 +7,126 @@ import MongodbIcon from "../icons/Mongodb.astro";
 import FirebaseIcon from "../icons/Firebase.astro";
 import PostgreSQLIcon from "../icons/PostgreSQL.astro";
 import SupabaseIcon from "../icons/Supabase.astro";
-import ShadcnIcon from "../icons/Shadcn.astro";
+import NodeJsIcon from "../icons/NodeJs.astro";
+import ExpressIcon from "../icons/Express.astro";
+import NestJsIcon from "../icons/NestJs.astro";
+import FlutterIcon from "../icons/Flutter.astro";
+import AngularIcon from "../icons/Angular.astro";
+import IonicIcon from "../icons/Ionic.astro";
+import ReactIcon from "../icons/React.astro";
+import AstroIcon from "../icons/AstroIcon.astro";
 
-export const TAGSLIST = {
+export type SkillLevel = "advanced" | "intermediate" | "learning";
+
+interface TagEntry {
+  name: string;
+  level: SkillLevel;
+  class: string;
+  icon: any;
+}
+
+export const TAGSLIST: Record<string, TagEntry> = {
   NEXT: {
     name: "Next.js",
+    level: "advanced",
     class: "bg-black text-white",
     icon: NextJSIcon,
   },
-  CSS: {
-    name: "CSS",
-    class: "bg-[#1c77b7] text-white",
-    icon: CssIcon,
-  },
-  JAVASCRIPT: {
-    name: "JavaScript",
-    class: "bg-[#f35e2a] text-white",
-    icon: JavaScriptIcon,
-  },
   TYPESCRIPT: {
     name: "TypeScript",
+    level: "advanced",
     class: "bg-[#377cc8] text-white",
     icon: TypeScriptIcon,
   },
   TAILWIND: {
     name: "Tailwind",
+    level: "advanced",
     class: "bg-[#ffffff] text-[#377cc8]",
     icon: TailwindIcon,
   },
   PRISMA: {
     name: "Prisma",
+    level: "intermediate",
     class: "bg-[#090a15] text-[#e2e8f0]",
     icon: PrismaIcon,
   },
   MONGODB: {
     name: "Mongodb",
+    level: "intermediate",
     class: "bg-[#55b447] text-[#ffffff]",
     icon: MongodbIcon,
   },
   FIREBASE: {
     name: "Firebase",
+    level: "intermediate",
     class: "bg-[#d72b00] text-[#ffffff]",
     icon: FirebaseIcon,
   },
   POSTGRESQL: {
     name: "PostgreSQL",
+    level: "intermediate",
     class: "bg-[#ffffff] text-[#336791]",
     icon: PostgreSQLIcon,
   },
   SUPABASE: {
     name: "Supabase",
+    level: "intermediate",
     class: "bg-[#ffffff] text-[#3fbf8f]",
     icon: SupabaseIcon,
   },
-  SHADCN: {
-    name: "Shadcn",
-    class: "bg-[#000000] text-[#ffffff]",
-    icon: ShadcnIcon,
+  NODEJS: {
+    name: "Node.js",
+    level: "advanced",
+    class: "bg-[#333333] text-[#68A063]",
+    icon: NodeJsIcon,
+  },
+  EXPRESS: {
+    name: "Express",
+    level: "advanced",
+    class: "bg-[#ffffff] text-[#000000]",
+    icon: ExpressIcon,
+  },
+  NESTJS: {
+    name: "NestJS",
+    level: "intermediate",
+    class: "bg-[#E0234E] text-white",
+    icon: NestJsIcon,
+  },
+  FLUTTER: {
+    name: "Flutter",
+    level: "advanced",
+    class: "bg-[#02569B] text-white",
+    icon: FlutterIcon,
+  },
+  REACTNATIVE: {
+    name: "React Native",
+    level: "intermediate",
+    class: "bg-[#222222] text-[#61DAFB]",
+    icon: ReactIcon,
+  },
+  ANGULAR: {
+    name: "Angular",
+    level: "intermediate",
+    class: "bg-[#DD0031] text-white",
+    icon: AngularIcon,
+  },
+  IONIC: {
+    name: "Ionic",
+    level: "learning",
+    class: "bg-[#3880FF] text-white",
+    icon: IonicIcon,
+  },
+  REACT: {
+    name: "React",
+    level: "advanced",
+    class: "bg-[#222222] text-[#61DAFB]",
+    icon: ReactIcon,
+  },
+  ASTRO: {
+    name: "Astro",
+    level: "intermediate",
+    class: "bg-[#23262D] text-[#FF5A03]",
+    icon: AstroIcon,
   },
 };
 ---

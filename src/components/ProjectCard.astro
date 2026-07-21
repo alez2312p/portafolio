@@ -1,0 +1,187 @@
+---
+import WebsiteIcon from "../icons/Website.astro";
+import GitHubIcon from "../icons/GitHub.astro";
+import ExpoIcon from "../icons/Expo.astro";
+import TypeBadge from "./TypeBadge.astro";
+import CaseStudy from "./CaseStudy.astro";
+import { TAGSLIST } from "./Tags.astro";
+import { Image } from "astro:assets";
+import { getI18N } from "../i18n";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
+type TagKey = keyof typeof TAGSLIST;
+
+interface CaseStudyData {
+  PROBLEM: string;
+  SOLUTION: string;
+  ARCHITECTURE: string;
+  RESULTS: string;
+}
+
+type ProjectStatus = "mvp" | "production" | "educational" | "archived";
+
+const statusStyles: Record<ProjectStatus, string> = {
+  mvp: "bg-amber-500/10 text-amber-400 border-amber-500/20",
+  production: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
+  educational: "bg-blue-500/10 text-blue-400 border-blue-500/20",
+  archived: "bg-gray-500/10 text-gray-400 border-gray-500/20",
+};
+
+interface Props {
+  IMAGE: string;
+  TITLE: string;
+  DESCRIPTION: string;
+  TAGS: TagKey[];
+  LINK: string;
+  GITHUB: string;
+  STATUS?: ProjectStatus;
+  TYPE?: "web" | "mobile" | "backend";
+  EXPO_LINK?: string;
+  CASE_STUDY?: CaseStudyData;
+}
+
+const {
+  IMAGE,
+  TITLE,
+  DESCRIPTION,
+  TAGS: projectTags,
+  LINK,
+  GITHUB,
+  STATUS,
+  TYPE,
+  EXPO_LINK,
+  CASE_STUDY,
+} = Astro.props;
+---
+
+<article
+  class="group relative flex flex-col overflow-hidden rounded-xl border border-gray-800 bg-gray-900/50 transition hover:border-emerald-500/30 hover:bg-gray-900 hover:shadow-lg hover:shadow-emerald-500/5"
+>
+  <div
+    class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-500/20 to-transparent opacity-0 group-hover:opacity-100 transition"
+  >
+  </div>
+
+  <div class="relative aspect-video overflow-hidden">
+    <Image
+      alt={TITLE}
+      class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+      loading="lazy"
+      src={IMAGE}
+      width={600}
+      height={338}
+    />
+    <div
+      class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"
+    >
+    </div>
+  </div>
+
+  <div class="flex flex-1 flex-col p-5">
+    <div class="flex items-start justify-between gap-2 mb-2">
+      <h3
+        class="text-lg font-semibold text-gray-100 group-hover:text-emerald-400 transition-colors"
+      >
+        {TITLE}
+      </h3>
+      <div class="flex items-center gap-1.5 shrink-0">
+        {
+          STATUS && (
+            <span
+              class={`inline-flex items-center gap-1 rounded-md border px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider ${statusStyles[STATUS]}`}
+            >
+              {STATUS === "mvp" && (i18n.MISC.STATUS_MVP ?? "MVP")}
+              {STATUS === "archived" &&
+                (i18n.MISC.STATUS_ARCHIVED ?? "Archived")}
+            </span>
+          )
+        }
+        {TYPE && <TypeBadge type={TYPE} />}
+      </div>
+    </div>
+
+    <div class="flex flex-wrap gap-1.5 mb-3">
+      {
+        projectTags.map((tag) => {
+          const tagData = TAGSLIST[tag];
+          return (
+            <span
+              class={`inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-xs ${tagData.class}`}
+            >
+              <tagData.icon class="size-3" />
+              {tagData.name}
+            </span>
+          );
+        })
+      }
+    </div>
+
+    <p class="text-sm text-gray-400 leading-relaxed flex-1">
+      {DESCRIPTION}
+    </p>
+
+    <div class="flex items-center gap-3 mt-4 pt-4 border-t border-gray-800">
+      {
+        GITHUB && (
+          <a
+            href={`https://${GITHUB}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-emerald-400 transition"
+          >
+            <GitHubIcon class="size-4" />
+            {i18n.MISC.CODE}
+          </a>
+        )
+      }
+      {
+        LINK && TYPE !== "mobile" && (
+          <a
+            href={`https://${LINK}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-emerald-400 transition"
+          >
+            <WebsiteIcon class="size-4" />
+            {i18n.MISC.PREVIEW}
+          </a>
+        )
+      }
+      {
+        EXPO_LINK && (
+          <a
+            href={EXPO_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-emerald-400 transition"
+          >
+            <ExpoIcon class="size-4" />
+            {i18n.MISC.EXPO_GO}
+          </a>
+        )
+      }
+    </div>
+
+    {CASE_STUDY && <CaseStudy {...CASE_STUDY} />}
+  </div>
+  <div
+    class="pointer-events-none absolute -inset-px rounded-xl opacity-0 transition duration-300 group-hover:opacity-100"
+    style="background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(16,185,129,0.06), transparent 40%);"
+  >
+  </div>
+</article>
+
+<script>
+  // @ts-nocheck
+  document.querySelectorAll("article.group").forEach(function (card) {
+    card.addEventListener("mousemove", function (e) {
+      const rect = card.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      card.style.setProperty("--mouse-x", x + "%");
+      card.style.setProperty("--mouse-y", y + "%");
+    });
+  });
+</script>

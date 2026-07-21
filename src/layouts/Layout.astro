@@ -1,8 +1,7 @@
 ---
-import "@fontsource-variable/onest";
-
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import "@fontsource-variable/inter";
+import "@fontsource-variable/jetbrains-mono";
+import "@fontsource-variable/outfit";
 
 interface Props {
   title: string;
@@ -20,74 +19,118 @@ const { currentLocale } = Astro;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#030712" />
+    <meta name="author" content="Alejandro P. Lezama" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://alez2312p.dev" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://alez2312p.dev/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://alez2312p.dev/og-image.png" />
+
     <title>{title}</title>
+
+    <!-- Analytics (Plausible) -->
+    <script
+      is:inline
+      defer
+      data-domain="alez2312p.dev"
+      src="https://plausible.io/js/script.js"></script>
+
+    <!-- Preload critical fonts -->
+    <link
+      rel="preload"
+      href="/fonts/inter-latin-wght-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/outfit-latin-wght-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
   </head>
 
-  <body class="relative text-gray-900 dark:text-gray-100">
+  <body class="relative bg-gray-950 text-gray-100">
     <div
-      class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-blue-50 dark:bg-gray-900
-      bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(200,200,255,0.5),rgba(255,255,255,0.9))]
-      dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(100,100,200,0.3),rgba(50,50,50,0))]"
+      class="fixed inset-0 z-[-1] bg-gray-950"
+      style="background-image: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(16,185,129,0.08), rgba(3,7,18,0)), radial-gradient(rgba(16,185,129,0.04) 1px, transparent 1px); background-size: 100% 100%, 32px 32px;"
     >
     </div>
-    <Header />
-    <main class="flex-grow p-6">
+    <slot name="header" />
+    <main class="flex-grow">
       <slot />
     </main>
-    <Footer />
+    <slot name="footer" />
     <style is:global>
       :root {
-        color-scheme: light dark;
+        color-scheme: dark;
       }
 
       html {
-        font-family: "Space Grotesk Variable", system-ui, sans-serif;
+        font-family: "Inter Variable", "Inter", system-ui, sans-serif;
         scroll-behavior: smooth;
       }
 
       body {
-        color: rgba(40, 40, 40, 0.9);
         display: flex;
         flex-direction: column;
         min-height: 100vh;
         overscroll-behavior: none;
       }
 
+      ::selection {
+        background-color: rgba(16, 185, 129, 0.3);
+        color: #fff;
+      }
+
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #030712;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #10b981;
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #34d399;
+      }
+
+      .font-mono {
+        font-family: "JetBrains Mono Variable", "JetBrains Mono", monospace;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Outfit Variable", "Outfit", sans-serif;
+        letter-spacing: -0.02em;
+      }
+
       @media (prefers-reduced-motion: reduce) {
         html {
           scroll-behavior: auto;
         }
-      }
-
-      @media (prefers-color-scheme: dark) {
-        body {
-          color: rgba(220, 220, 220, 0.9);
-        }
-      }
-
-      #header-nav {
-        animation: fadeIn linear both 0.5s;
-        animation-timeline: scroll();
-        animation-range: 0 500px;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-
-      @media (prefers-color-scheme: dark) {
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
         }
       }
     </style>

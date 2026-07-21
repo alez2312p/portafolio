@@ -1,0 +1,41 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#030712"/>
+  <rect width="1200" height="630" fill="url(#gradient)"/>
+  <defs>
+    <radialGradient id="gradient" cx="50%" cy="-10%" r="80%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#030712" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect x="60" y="60" width="1080" height="510" rx="24" fill="#111827" fill-opacity="0.5" stroke="#1f2937" stroke-width="1"/>
+
+  <!-- Initials circle -->
+  <circle cx="160" cy="280" r="70" fill="#111827" stroke="#10b981" stroke-width="2"/>
+  <text x="160" y="298" text-anchor="middle" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="52" font-weight="bold">AP</text>
+
+  <!-- Name -->
+  <text x="270" y="250" fill="#f3f4f6" font-family="'Inter', sans-serif" font-size="48" font-weight="700">Alejandro P. Lezama</text>
+
+  <!-- Tagline -->
+  <text x="270" y="310" fill="#9ca3af" font-family="'Inter', sans-serif" font-size="28">Fullstack Developer</text>
+
+  <!-- Tech badges -->
+  <rect x="270" y="345" width="100" height="34" rx="8" fill="#222222"/>
+  <text x="320" y="367" text-anchor="middle" fill="#61DAFB" font-family="'Inter', sans-serif" font-size="16" font-weight="500">React</text>
+
+  <rect x="382" y="345" width="106" height="34" rx="8" fill="black"/>
+  <text x="435" y="367" text-anchor="middle" fill="white" font-family="'Inter', sans-serif" font-size="16" font-weight="500">Next.js</text>
+
+  <rect x="500" y="345" width="90" height="34" rx="8" fill="#02569B"/>
+  <text x="545" y="367" text-anchor="middle" fill="white" font-family="'Inter', sans-serif" font-size="16" font-weight="500">Flutter</text>
+
+  <rect x="602" y="345" width="110" height="34" rx="8" fill="#222222"/>
+  <text x="657" y="367" text-anchor="middle" fill="#68A063" font-family="'Inter', sans-serif" font-size="16" font-weight="500">Node.js</text>
+
+  <rect x="724" y="345" width="106" height="34" rx="8" fill="white"/>
+  <text x="777" y="367" text-anchor="middle" fill="#377cc8" font-family="'Inter', sans-serif" font-size="16" font-weight="500">TypeScript</text>
+
+  <!-- URL -->
+  <text x="600" y="500" text-anchor="middle" fill="#4b5563" font-family="'Inter', sans-serif" font-size="20">alez2312p.dev</text>
+</svg>
