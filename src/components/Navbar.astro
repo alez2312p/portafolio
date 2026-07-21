@@ -10,7 +10,11 @@ const navItems = [
   { title: t("nav.freelance"), label: "freelance", url: "/#freelance" },
   { title: t("nav.experience"), label: "experience", url: "/#experience" },
   { title: t("nav.about"), label: "about", url: "/#about" },
-  { title: t("nav.contact"), label: "contact", url: "mailto:alejandropl2509@gmail.com" },
+  {
+    title: t("nav.contact"),
+    label: "contact",
+    url: "mailto:alejandropl2509@gmail.com",
+  },
 ];
 ---
 
@@ -24,19 +28,21 @@ const navItems = [
         href="/"
         class="text-lg font-semibold tracking-tight text-gray-100 hover:text-emerald-400 transition-colors"
       >
-        alez2312p<span class="text-emerald-400">.</span>
+        alez2312p
       </a>
 
       <nav class="hidden md:flex items-center gap-1">
-        {navItems.map((link) => (
-          <a
-            class="nav-link relative px-3 py-2 text-sm text-gray-400 hover:text-emerald-400 transition-colors"
-            aria-label={link.label}
-            href={link.url}
-          >
-            {link.title}
-          </a>
-        ))}
+        {
+          navItems.map((link) => (
+            <a
+              class="nav-link relative px-3 py-2 text-sm text-gray-400 hover:text-emerald-400 transition-colors"
+              aria-label={link.label}
+              href={link.url}
+            >
+              {link.title}
+            </a>
+          ))
+        }
         <div class="ml-2 flex items-center">
           <LanguagePicker />
         </div>
@@ -44,12 +50,36 @@ const navItems = [
 
       <div class="flex md:hidden items-center gap-2">
         <LanguagePicker />
-        <button id="mobile-menu-btn" class="text-gray-400 hover:text-emerald-400 p-2" aria-label="Menu">
-          <svg id="menu-open-icon" class="size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        <button
+          id="mobile-menu-btn"
+          class="text-gray-400 hover:text-emerald-400 p-2"
+          aria-label="Menu"
+        >
+          <svg
+            id="menu-open-icon"
+            class="size-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
-          <svg id="menu-close-icon" class="size-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          <svg
+            id="menu-close-icon"
+            class="size-6 hidden"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"></path>
           </svg>
         </button>
       </div>
@@ -61,15 +91,17 @@ const navItems = [
     class="fixed inset-x-0 top-[57px] bottom-0 z-40 hidden bg-gray-950/95 backdrop-blur-md md:hidden"
   >
     <nav class="flex flex-col items-center gap-2 pt-12 px-4">
-      {navItems.map((link) => (
-        <a
-          class="mobile-nav-link w-full max-w-xs rounded-xl border border-gray-800 bg-gray-900/80 px-6 py-4 text-center text-base text-gray-300 transition hover:border-emerald-500/50 hover:text-emerald-400"
-          aria-label={link.label}
-          href={link.url}
-        >
-          {link.title}
-        </a>
-      ))}
+      {
+        navItems.map((link) => (
+          <a
+            class="mobile-nav-link w-full max-w-xs rounded-xl border border-gray-800 bg-gray-900/80 px-6 py-4 text-center text-base text-gray-300 transition hover:border-emerald-500/50 hover:text-emerald-400"
+            aria-label={link.label}
+            href={link.url}
+          >
+            {link.title}
+          </a>
+        ))
+      }
     </nav>
   </div>
 </header>
