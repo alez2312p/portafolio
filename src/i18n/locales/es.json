@@ -98,13 +98,13 @@
     {
       "TITLE": "Soporte técnico",
       "COMPANY": "Corporación universitaria Remington",
-      "DATE": "Septiembre 2022 - Marzo 2023",
+      "DATE": "Septiembre 2022 - Febrero 2023",
       "DESCRIPTION": "Realizar mantenimientos de software y hardware a equipos de computo; desatascar, cambiar toner y configurar impresoras, realizar mantenimientos a la red, configurar equipos de aulas de computo, resolver casos a estudiantes y trabajadores de la universidad."
     },
     {
       "TITLE": "Desarrollador flutter",
       "COMPANY": "LoopMedia",
-      "DATE": "Febrero 2022 - Agosto 2022",
+      "DATE": "Marzo 2022 - Agosto 2022",
       "DESCRIPTION": "Optimizar y crear nuevas funciones para aplicaciones moviles con el lenguaje de programación dart y el framework Flutter. Optimizar y crear nuevas funciones para la página web con el Framework de React."
     }
   ],

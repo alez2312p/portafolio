@@ -28,7 +28,14 @@ const skills: { category: string; items: TagKey[] }[] = [
   },
   {
     category: "Database",
-    items: ["MONGODB", "POSTGRESQL", "FIREBASE", "SUPABASE"],
+    items: [
+      "MONGODB",
+      "POSTGRESQL",
+      "FIREBASE",
+      "SUPABASE",
+      "MYSQL",
+      "SQLSERVER",
+    ],
   },
 ];
 ---
@@ -43,33 +50,39 @@ const skills: { category: string; items: TagKey[] }[] = [
   </div>
 
   <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-    {skills.map(({ category, items }) => (
-      <div class="rounded-xl border border-gray-800 bg-gray-900/50 p-5">
-        <h3 class="text-sm font-semibold text-gray-300 mb-4">{category}</h3>
-        {items.length > 0 ? (
-          <div class="flex flex-wrap gap-2">
-            {items.map((key) => {
-              const tag = TAGSLIST[key];
-              const level = tag.level ?? "intermediate";
-              return (
-                <span
-                  class={`inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-medium ${tag.class} transition`}
-                >
-                  <span class={`inline-block size-1.5 rounded-full shrink-0 ${dotColors[level]}`}></span>
-                  <tag.icon class="size-3.5" />
-                  {tag.name}
-                </span>
-              );
-            })}
-          </div>
-        ) : (
-          <p class="text-sm text-gray-500">{i18n.SKILLS.COMING_SOON}</p>
-        )}
-      </div>
-    ))}
+    {
+      skills.map(({ category, items }) => (
+        <div class="rounded-xl border border-gray-800 bg-gray-900/50 p-5">
+          <h3 class="text-sm font-semibold text-gray-300 mb-4">{category}</h3>
+          {items.length > 0 ? (
+            <div class="flex flex-wrap gap-2">
+              {items.map((key) => {
+                const tag = TAGSLIST[key];
+                const level = tag.level ?? "intermediate";
+                return (
+                  <span
+                    class={`inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-medium ${tag.class} transition`}
+                  >
+                    <span
+                      class={`inline-block size-1.5 rounded-full shrink-0 ${dotColors[level]}`}
+                    />
+                    <tag.icon class="size-3.5" />
+                    {tag.name}
+                  </span>
+                );
+              })}
+            </div>
+          ) : (
+            <p class="text-sm text-gray-500">{i18n.SKILLS.COMING_SOON}</p>
+          )}
+        </div>
+      ))
+    }
   </div>
 
-  <div class="mt-6 flex items-center justify-center gap-5 text-xs text-gray-500">
+  <div
+    class="mt-6 flex items-center justify-center gap-5 text-xs text-gray-500"
+  >
     <span class="inline-flex items-center gap-1.5">
       <span class="inline-block size-2 rounded-full bg-emerald-400"></span>
       {i18n.SKILLS.ADVANCED}
