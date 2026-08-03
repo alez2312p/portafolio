@@ -20,7 +20,8 @@
     "PREVIEW": "Preview",
     "EXPO_GO": "Expo Go",
     "STATUS_MVP": "MVP",
-    "STATUS_ARCHIVED": "Archived"
+    "STATUS_ARCHIVED": "Archived",
+    "PRIVATE_CODE": "This project's code is private"
   },
   "GITHUB_STATS": {
     "REPOS": "Repos",
@@ -110,10 +111,27 @@
   ],
   "PROJECTS": [
     {
+      "IMAGE": "/moneto.webp",
+      "TITLE": "Moneto",
+      "TAGS": ["NEXT", "TYPESCRIPT", "TAILWIND", "SUPABASE", "GEMINI"],
+      "STATUS": "mvp",
+      "PRIVATE": true,
+      "DESCRIPTION": "Personal finance dashboard with artificial intelligence. Track expenses and income, auto-categorize with AI, visualize trends, and manage budgets.",
+      "LINK": "moneto-ten.vercel.app",
+      "GITHUB": "github.com/alez2312p/moneto",
+      "CASE_STUDY": {
+        "PROBLEM": "People don't really know what they spend their money on. Personal finance apps are usually generic, expensive, or require complex bank integrations that create friction. Manually categorizing expenses is tedious and gets abandoned within days.",
+        "SOLUTION": "Moneto was built: a financial dashboard that works without needing to connect bank accounts. You manually record expenses and income (or import CSV), and the AI automatically categorizes them with Gemini. It includes per-category budgets, recurring payments, monthly AI analysis with recommendations, and a no-login demo mode.",
+        "ARCHITECTURE": "Next.js App Router + Supabase (PostgreSQL + Auth) + Tailwind CSS + Shadcn UI. AI categorization uses Gemini 2.5 Flash with a fallback to local rules, ensuring full functionality without an API key. Demo mode uses pre-loaded data without authentication.",
+        "RESULTS": "Complete product with demo mode that lets you try it without registering. AI categorization removes the biggest friction point of manual expense tracking, and the local-rules fallback ensures the app works without API costs."
+      }
+    },
+    {
       "IMAGE": "/barbershop.webp",
       "TITLE": "Barbershop",
       "TAGS": ["NEXT", "TAILWIND", "TYPESCRIPT", "SUPABASE"],
       "STATUS": "mvp",
+      "PRIVATE": true,
       "DESCRIPTION": "A web and mobile application for managing appointments and shifts in barbershops, beauty salons, and similar businesses. It allows customers to book appointments, employees to manage their schedules, and managers to efficiently oversee the business.",
       "LINK": "barberflow-sigma.vercel.app/explore",
       "GITHUB": "github.com/alez2312p/barberflow",

@@ -20,7 +20,8 @@
     "PREVIEW": "Sitio web",
     "EXPO_GO": "Expo Go",
     "STATUS_MVP": "MVP",
-    "STATUS_ARCHIVED": "Archivado"
+    "STATUS_ARCHIVED": "Archivado",
+    "PRIVATE_CODE": "El código de este proyecto es privado"
   },
   "GITHUB_STATS": {
     "REPOS": "Repos",
@@ -110,10 +111,27 @@
   ],
   "PROJECTS": [
     {
+      "IMAGE": "/moneto.webp",
+      "TITLE": "Moneto",
+      "TAGS": ["NEXT", "TYPESCRIPT", "TAILWIND", "SUPABASE", "GEMINI"],
+      "STATUS": "mvp",
+      "PRIVATE": true,
+      "DESCRIPTION": "Dashboard financiero personal con inteligencia artificial. Registra gastos e ingresos, categoriza automáticamente con IA, visualiza tendencias y gestiona presupuestos.",
+      "LINK": "moneto-ten.vercel.app",
+      "GITHUB": "github.com/alez2312p/moneto",
+      "CASE_STUDY": {
+        "PROBLEM": "La gente no sabe realmente en qué gasta su dinero. Las apps de finanzas personales suelen ser genéricas, caras o requieren integraciones bancarias complejas que generan fricción. Categorizar gastos manualmente es tedioso y se abandona a los pocos días.",
+        "SOLUTION": "Se construyó Moneto: un dashboard financiero que funciona sin necesidad de conectar cuentas bancarias. Registras gastos e ingresos manualmente (o importas CSV), y la IA se encarga de categorizar automáticamente con Gemini. Incluye presupuestos por categoría, pagos recurrentes, análisis mensual con recomendaciones y modo demo sin login.",
+        "ARCHITECTURE": "Next.js App Router + Supabase (PostgreSQL + Auth) + Tailwind CSS + Shadcn UI. La categorización con IA usa Gemini 2.5 Flash con fallback a reglas locales, garantizando funcionamiento completo sin API key. El modo demo usa datos pre-cargados sin autenticación.",
+        "RESULTS": "Producto completo con modo demo que permite probarlo sin registro. La categorización con IA elimina el mayor punto de fricción del registro manual de gastos, y el fallback a reglas locales asegura que la app funciona sin costos de API."
+      }
+    },
+    {
       "IMAGE": "/barbershop.webp",
       "TITLE": "Barbershop",
       "TAGS": ["NEXT", "TAILWIND", "TYPESCRIPT", "SUPABASE"],
       "STATUS": "mvp",
+      "PRIVATE": true,
       "DESCRIPTION": "Una aplicación web y móvil para la gestión de citas y turnos en barberías, salones de belleza y negocios similares. Permite a los clientes reservar citas, a los empleados gestionar su agenda y a los administradores supervisar el negocio de manera eficiente.",
       "LINK": "barberflow-sigma.vercel.app/explore",
       "GITHUB": "github.com/alez2312p/barberflow",

@@ -36,6 +36,7 @@ interface Props {
   TAGS: TagKey[];
   LINK: string;
   GITHUB: string;
+  PRIVATE?: boolean;
   STATUS?: ProjectStatus;
   TYPE?: "web" | "mobile" | "backend";
   EXPO_LINK?: string;
@@ -49,6 +50,7 @@ const {
   TAGS: projectTags,
   LINK,
   GITHUB,
+  PRIVATE,
   STATUS,
   TYPE,
   EXPO_LINK,
@@ -124,7 +126,7 @@ const {
 
     <div class="flex items-center gap-3 mt-4 pt-4 border-t border-gray-800">
       {
-        GITHUB && (
+        GITHUB && !PRIVATE && (
           <a
             href={`https://${GITHUB}`}
             target="_blank"
@@ -134,6 +136,22 @@ const {
             <GitHubIcon class="size-4" />
             {i18n.MISC.CODE}
           </a>
+        )
+      }
+      {
+        GITHUB && PRIVATE && (
+          <div class="relative inline-flex">
+            <button
+              class="code-private-btn inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-emerald-400 transition cursor-pointer"
+              aria-label={i18n.MISC.PRIVATE_CODE}
+            >
+              <GitHubIcon class="size-4" />
+              {i18n.MISC.CODE}
+            </button>
+            <div class="code-private-tooltip pointer-events-none absolute bottom-full left-0 z-10 mb-2 w-max max-w-[200px] rounded-lg border border-gray-700 bg-gray-900 px-3 py-2 text-xs text-gray-300 opacity-0 transition-opacity duration-200 shadow-xl">
+              {i18n.MISC.PRIVATE_CODE}
+            </div>
+          </div>
         )
       }
       {
@@ -182,6 +200,21 @@ const {
       const y = ((e.clientY - rect.top) / rect.height) * 100;
       card.style.setProperty("--mouse-x", x + "%");
       card.style.setProperty("--mouse-y", y + "%");
+    });
+  });
+
+  document.querySelectorAll(".code-private-btn").forEach(function (btn) {
+    const tooltip = btn.closest("div").querySelector(".code-private-tooltip");
+    if (!tooltip) return;
+    let timeout;
+    btn.addEventListener("mouseenter", function () {
+      clearTimeout(timeout);
+      tooltip.classList.remove("opacity-0");
+    });
+    btn.addEventListener("mouseleave", function () {
+      timeout = setTimeout(function () {
+        tooltip.classList.add("opacity-0");
+      }, 300);
     });
   });
 </script>
