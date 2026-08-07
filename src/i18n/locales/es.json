@@ -117,7 +117,7 @@
       "STATUS": "mvp",
       "PRIVATE": true,
       "DESCRIPTION": "Dashboard financiero personal con inteligencia artificial. Registra gastos e ingresos, categoriza automáticamente con IA, visualiza tendencias y gestiona presupuestos.",
-      "LINK": "moneto-ten.vercel.app",
+      "LINK": "moneto.alejandropl.com",
       "GITHUB": "github.com/alez2312p/moneto",
       "CASE_STUDY": {
         "PROBLEM": "La gente no sabe realmente en qué gasta su dinero. Las apps de finanzas personales suelen ser genéricas, caras o requieren integraciones bancarias complejas que generan fricción. Categorizar gastos manualmente es tedioso y se abandona a los pocos días.",
@@ -148,7 +148,7 @@
       "STATUS": "mvp",
       "TAGS": ["NEXT", "TAILWIND", "TYPESCRIPT", "POSTGRESQL", "PRISMA"],
       "DESCRIPTION": "ConstructTrack es un sistema completo de gestión de inventario diseñado específicamente para la industria de la construcción. Permite controlar materiales, registrar movimientos de entradas y salidas, gestionar categorías y ubicaciones, y generar alertas cuando el stock alcanza niveles críticos.",
-      "LINK": "constructtrack-rust.vercel.app",
+      "LINK": "constructtrack.alejandropl.com",
       "GITHUB": "github.com/alez2312p/constructtrack",
       "CASE_STUDY": {
         "PROBLEM": "Las empresas constructoras pequeñas y medianas manejaban su inventario con hojas de cálculo o papel, causando pérdidas de materiales, compras duplicadas y falta de visibilidad del stock en tiempo real en múltiples obras.",

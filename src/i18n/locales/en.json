@@ -117,7 +117,7 @@
       "STATUS": "mvp",
       "PRIVATE": true,
       "DESCRIPTION": "Personal finance dashboard with artificial intelligence. Track expenses and income, auto-categorize with AI, visualize trends, and manage budgets.",
-      "LINK": "moneto-ten.vercel.app",
+      "LINK": "moneto.alejandropl.com",
       "GITHUB": "github.com/alez2312p/moneto",
       "CASE_STUDY": {
         "PROBLEM": "People don't really know what they spend their money on. Personal finance apps are usually generic, expensive, or require complex bank integrations that create friction. Manually categorizing expenses is tedious and gets abandoned within days.",
@@ -148,7 +148,7 @@
       "STATUS": "mvp",
       "TAGS": ["NEXT", "TAILWIND", "TYPESCRIPT", "POSTGRESQL", "PRISMA"],
       "DESCRIPTION": "ConstructTrack is a comprehensive inventory management system designed specifically for the construction industry. It allows you to track materials, record incoming and outgoing movements, manage categories and locations, and generate alerts when stock reaches critical levels.",
-      "LINK": "constructtrack-rust.vercel.app",
+      "LINK": "constructtrack.alejandropl.com",
       "GITHUB": "github.com/alez2312p/constructtrack",
       "CASE_STUDY": {
         "PROBLEM": "Small and medium construction companies managed inventory with spreadsheets or paper, causing material loss, duplicate purchases, and lack of real-time stock visibility across multiple job sites.",
