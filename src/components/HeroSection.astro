@@ -8,7 +8,9 @@ const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 ---
 
-<section class="relative flex min-h-[90vh] items-center justify-center overflow-hidden px-4">
+<section
+  class="relative flex min-h-[90vh] items-center justify-center overflow-hidden px-4"
+>
   <div
     class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.06),transparent_60%)]"
   >
@@ -34,7 +36,9 @@ const i18n = getI18N({ currentLocale });
       {i18n.HOME.TAGLINE}
     </p>
 
-    <p class="mt-6 text-lg text-gray-400 sm:text-xl max-w-2xl mx-auto leading-relaxed">
+    <p
+      class="mt-6 text-lg text-gray-400 sm:text-xl max-w-2xl mx-auto leading-relaxed"
+    >
       <strong class="font-mono text-emerald-400 font-semibold"
         >{i18n.HOME.YEARS_EXPERIENCE}</strong
       >
@@ -73,9 +77,21 @@ const i18n = getI18N({ currentLocale });
     </div>
 
     <div class="mt-16 flex justify-center">
-      <a href="#experience" class="animate-bounce text-gray-500 hover:text-emerald-400 transition-colors">
-        <svg class="size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      <a
+        href="#experience"
+        class="animate-bounce text-gray-500 hover:text-emerald-400 transition-colors"
+      >
+        <svg
+          class="size-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
         </svg>
       </a>
     </div>
