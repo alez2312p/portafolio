@@ -165,6 +165,21 @@
       "DESCRIPTION": "Co-founder and developer of the first version of this fintech payment and transfer application. The project evolved and the current version does not reflect my work, but the experience of building a financial product from scratch was key to my growth.",
       "LINK": "buckspay.xyz",
       "GITHUB": "github.com/bucks-pay/buckspay_landing"
+    },
+    {
+      "IMAGE": "/outlet.webp",
+      "TITLE": "Outlet",
+      "TAGS": ["NEXT", "TYPESCRIPT", "TAILWIND", "SUPABASE", "PRISMA"],
+      "STATUS": "production",
+      "DESCRIPTION": "Multi-tenant e-commerce for clothing outlets. A single system serves many stores (each with its own domain or sub-path) at $0 infrastructure cost. Includes catalog, cart, WhatsApp checkout, admin panel with inventory, variants, orders, dashboard, and data migration.",
+      "LINK": "outlet.alejandropl.com/demo-outlet/login",
+      "GITHUB": "github.com/alez2312p/outlet",
+      "CASE_STUDY": {
+        "PROBLEM": "Small clothing outlets needed their own digital presence (catalog, cart, orders) but lacked budget to develop and maintain individual e-commerce. No multi-tenant solution existed that could share infrastructure while preserving each store's brand identity.",
+        "SOLUTION": "Built Outlet: a multi-tenant platform where each store lives on its own slug (/demo-outlet) or custom domain. Includes public storefront (catalog, product detail, cart, WhatsApp checkout, customer account) and full admin panel (KPI dashboard, products with size×color×stock variants, categories, orders with statuses and auto stock adjustment, brand/shipping/WhatsApp settings, JSON/CSV migration). Read-only demo mode for risk-free testing.",
+        "ARCHITECTURE": "Next.js 16 App Router + React 19 + TypeScript + Tailwind CSS + Lucide. PostgreSQL on Supabase with Prisma ORM. Supabase Auth (email/password + Google OAuth) host-aware for correct redirects on custom domains. Middleware proxy for transparent rewrite customdomain.com → /[slug].",
+        "RESULTS": "Production-ready system with 387 tests, clean build, zero tsc errors. Real multi-tenant working: demo-outlet live at outlet.alejandropl.com/demo-outlet. $0 infrastructure cost leveraging free tiers. Architecture ready for custom domains (UI in panel pending)."
+      }
     }
   ],
   "NOW": {

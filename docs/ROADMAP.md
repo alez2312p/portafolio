@@ -228,6 +228,8 @@ El usuario decidió no implementar blog por el momento.
 
 ## 10. Ideas de Proyectos Nuevos
 
+**Proyecto seleccionado**: Finanzas personales con IA. Documento completo en `docs/proyectos/finanzas-personales-ia.md`. Starter Kit MVP reemplazado.
+
 ### 10.1 Criterios para elegir proyecto
 
 - Que use tecnologías en las que ya eres fuerte (Next.js, Supabase, TypeScript)
@@ -299,6 +301,7 @@ El usuario decidió no implementar blog por el momento.
 | `src/pages/en/404.astro` | ✅ Creada |
 | `src/content/writing/*.md` | Artículos del blog (opcional) |
 | `src/components/RecentWritings.astro` | Sección de blog (opcional) |
+| `docs/proyectos/finanzas-personales-ia.md` | ✅ Documentación completa del proyecto Finanzas con IA |
 
 ---
 

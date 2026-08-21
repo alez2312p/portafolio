@@ -165,6 +165,21 @@
       "DESCRIPTION": "Co-fundador y desarrollador de la primera versión de esta aplicación fintech de pagos y transferencias. El proyecto evolucionó y la versión actual no refleja mi trabajo, pero la experiencia de construir un producto financiero desde cero fue clave en mi formación.",
       "LINK": "buckspay.xyz",
       "GITHUB": "github.com/bucks-pay/buckspay_landing"
+    },
+    {
+      "IMAGE": "/outlet.webp",
+      "TITLE": "Outlet",
+      "TAGS": ["NEXT", "TYPESCRIPT", "TAILWIND", "SUPABASE", "PRISMA"],
+      "STATUS": "production",
+      "DESCRIPTION": "E-commerce multi-tenant para outlets de ropa. Un solo sistema sirve a muchas tiendas (cada una con su dominio o sub-ruta) con costo de infraestructura $0. Incluye catálogo, carrito, checkout por WhatsApp, panel admin con inventario, variantes, pedidos, dashboard y migración de datos.",
+      "LINK": "outlet.alejandropl.com/demo-outlet/login",
+      "GITHUB": "github.com/alez2312p/outlet",
+      "CASE_STUDY": {
+        "PROBLEM": "Los outlets de ropa pequeños necesitaban una presencia digital propia (catálogo, carrito, pedidos) pero no tenían presupuesto para desarrollar y mantener un e-commerce individual. Tampoco existía una solución multi-tenant que permitiera compartir infraestructura manteniendo la identidad de marca de cada tienda.",
+        "SOLUTION": "Se construyó Outlet: una plataforma multi-tenant donde cada tienda vive en su propio slug (/demo-outlet) o dominio personalizado. Incluye tienda pública (catálogo, ficha producto, carrito, checkout WhatsApp, cuenta cliente) y panel de administración completo (dashboard KPIs, productos con variantes talla×color×stock, categorías, pedidos con estados y ajuste de stock automático, settings de marca/envíos/WhatsApp, migración JSON/CSV). Modo demo solo-lectura para probar sin riesgo.",
+        "ARCHITECTURE": "Next.js 16 App Router + React 19 + TypeScript + Tailwind CSS + Lucide. Base de datos PostgreSQL en Supabase con Prisma ORM. Auth Supabase (email/password + Google OAuth) host-aware para redirigir correctamente en dominios custom. Proxy en middleware para reescritura transparente midominio.com → /[slug]. Zustand para carrito global.",
+        "RESULTS": "Sistema listo para producción con 387 tests, build limpio y tsc sin errores. Multi-tenant real funcionando: demo-outlet operativo en outlet.alejandropl.com/demo-outlet. Costo de infraestructura $0 aprovechando planes gratuitos. Arquitectura preparada para dominios custom (pendiente UI en panel)."
+      }
     }
   ],
   "NOW": {
