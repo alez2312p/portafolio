@@ -170,7 +170,7 @@
       "IMAGE": "/outlet.webp",
       "TITLE": "Outlet",
       "TAGS": ["NEXT", "TYPESCRIPT", "TAILWIND", "SUPABASE", "PRISMA"],
-      "STATUS": "production",
+      "STATUS": "mvp",
       "DESCRIPTION": "E-commerce multi-tenant para outlets de ropa. Un solo sistema sirve a muchas tiendas (cada una con su dominio o sub-ruta) con costo de infraestructura $0. Incluye catálogo, carrito, checkout por WhatsApp, panel admin con inventario, variantes, pedidos, dashboard y migración de datos.",
       "LINK": "outlet.alejandropl.com/demo-outlet/login",
       "GITHUB": "github.com/alez2312p/outlet",
