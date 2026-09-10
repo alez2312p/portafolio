@@ -3,10 +3,10 @@
     "HELLO": "Hello 👋🏽, I am Alejandro P. Lezama",
     "TAGLINE": "Fullstack developer. I build web and mobile products — from prototype to production.",
     "AVAILABLE": "Available for work",
-    "INTRO": "as a front-end, back-end and mobile applications developer.",
+    "INTRO": "as a front-end, back-end and mobile developer.",
     "YEARS_EXPERIENCE": "5 years of experience",
     "JOB_TITLE": "Software development technologist.",
-    "CONTENT": "I have knowledge and skills in various languages ​​and technologies.",
+    "CONTENT": "I possess solid knowledge and end-to-end software development skills.",
     "CONTACT_ME": "Contact me",
     "EXPERIENCE": "Experience",
     "PROJECTS": "Projects",
@@ -77,7 +77,14 @@
     }
   ],
   "CONTACT": {
-    "SUBTITLE": "Have a project in mind or want to collaborate? I'm open to new opportunities."
+    "TITLE": "Have a project in mind?",
+    "SUBTITLE": "I am available for freelance projects, consulting, or joining your team full-time.",
+    "BADGE": "Available for work",
+    "RESPONSE_TIME": "Usually responds in under 24 hours",
+    "SEND_EMAIL": "Send an email",
+    "COPY_EMAIL": "Copy email",
+    "COPIED": "Copied!",
+    "LINKEDIN": "Connect on LinkedIn"
   },
   "FOOTER": {
     "CONTACT": "Contact"
@@ -91,22 +98,22 @@
   },
   "EXPERIENCE": [
     {
-      "TITLE": "Freelance - fullstack",
+      "TITLE": "Freelance Fullstack Developer",
       "COMPANY": "Freelance",
       "DATE": "Currently",
-      "DESCRIPTION": "I develop mobile applications using Dart and the Flutter framework. I build APIs with Node.js and manage connections to NoSQL databases like MongoDB and Firebase, and SQL databases like PostgreSQL and MySQL. I also develop websites with React, Next.js, Tailwind CSS, Shadcn, and CSS, integrating them through APIs."
+      "DESCRIPTION": "End-to-end design and development of web and mobile applications for startups and clients. Building scalable APIs with Node.js, Express, and managing relational (PostgreSQL, MySQL) and NoSQL (MongoDB, Firebase) databases. Crafting modern, responsive web interfaces with React, Next.js, and Tailwind CSS, as well as cross-platform mobile apps with Flutter."
     },
     {
-      "TITLE": "Technical Support",
+      "TITLE": "Technical Support & IT Infrastructure",
       "COMPANY": "Remington University Corporation",
       "DATE": "September 2022 - February 2023",
-      "DESCRIPTION": "Perform software and hardware maintenance on computer equipment; unblock, change toner, and configure printers; maintain the network; configure classroom computers; resolve issues for students and university staff."
+      "DESCRIPTION": "Preventive and corrective maintenance of IT infrastructure (software and hardware), local network administration, computer lab workstation configuration, and rapid technical incident resolution for students and staff."
     },
     {
       "TITLE": "Flutter Developer",
       "COMPANY": "LoopMedia",
       "DATE": "March 2022 - August 2022",
-      "DESCRIPTION": "Optimize and create new features for mobile applications using Dart and the Flutter framework. Optimize and create new features for the website using the React framework."
+      "DESCRIPTION": "Feature development and performance optimization for mobile applications using Dart and Flutter. Building and refining interactive web interfaces using React."
     }
   ],
   "PROJECTS": [
@@ -197,7 +204,8 @@
       "AWS deployment (practicing with EC2, S3, and Lambda)",
       "Supabase Realtime for live functionality",
       "GraphQL as an alternative to REST in new projects"
-    ]
+    ],
+    "UPDATED_DATE": "Updated: September 2026"
   },
   "ABOUT": {
     "CONTENT1": "Fullstack developer with 5 years of experience building web and mobile applications. I focus on creating functional products that solve real problems, using technologies like React, Next.js, Flutter, and Node.js.",

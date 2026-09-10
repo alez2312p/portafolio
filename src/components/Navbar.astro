@@ -1,19 +1,21 @@
 ---
-import { getLangFromUrl, useTranslations } from "../i18n/utils.ts";
+import { getLangFromUrl, useTranslations, useTranslatedPath } from "../i18n/utils.ts";
 import LanguagePicker from "./LanguagePicker.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 
 const navItems = [
-  { title: t("nav.projects"), label: "projects", url: "/#projects" },
-  { title: t("nav.freelance"), label: "freelance", url: "/#freelance" },
-  { title: t("nav.experience"), label: "experience", url: "/#experience" },
-  { title: t("nav.about"), label: "about", url: "/#about" },
+  { title: t("nav.skills"), label: "skills", url: translatePath("/#skills") },
+  { title: t("nav.projects"), label: "projects", url: translatePath("/#projects") },
+  { title: t("nav.freelance"), label: "freelance", url: translatePath("/#freelance") },
+  { title: t("nav.experience"), label: "experience", url: translatePath("/#experience") },
+  { title: t("nav.about"), label: "about", url: translatePath("/#about") },
   {
     title: t("nav.contact"),
     label: "contact",
-    url: "mailto:alejandropl2509@gmail.com",
+    url: translatePath("/#contact"),
   },
 ];
 ---
@@ -25,7 +27,7 @@ const navItems = [
   <div class="mx-auto max-w-6xl px-4 sm:px-6">
     <div class="flex items-center justify-between py-4">
       <a
-        href="/"
+        href={translatePath("/")}
         class="text-lg font-semibold tracking-tight text-gray-100 hover:text-emerald-400 transition-colors"
       >
         alez2312p

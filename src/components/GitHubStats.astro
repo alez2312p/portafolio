@@ -93,7 +93,7 @@ const gs = i18n.GITHUB_STATS;
 
   {error ? (
     <div class="rounded-xl border border-gray-800 bg-gray-900/50 p-6 text-center">
-      <p class="text-sm text-gray-500">
+      <p class="text-sm text-gray-400">
         {gs.ERROR}
         <a
           href={`https://github.com/${USERNAME}`}
@@ -109,19 +109,24 @@ const gs = i18n.GITHUB_STATS;
     <div class="rounded-xl border border-gray-800 bg-gray-900/50 p-6">
       <div class="flex items-center justify-between border-b border-gray-800 pb-4 mb-4">
         <div class="flex items-center gap-3">
-          <div class="flex size-10 items-center justify-center rounded-lg bg-gray-800">
-            <span class="text-sm font-bold text-emerald-400 font-mono">AP</span>
-          </div>
+          <img
+            src="/avatar-optimized.webp"
+            alt={USERNAME}
+            class="size-10 rounded-lg object-cover border border-gray-800"
+            width="40"
+            height="40"
+            loading="lazy"
+          />
           <div>
             <p class="text-sm font-medium text-gray-100">{USERNAME}</p>
-            <p class="text-xs text-gray-500">{formatNumber(totalStars)} {gs.STARS.toLowerCase()} · {user.public_repos} {gs.REPOS.toLowerCase()}</p>
+            <p class="text-xs text-gray-400">{formatNumber(totalStars)} {gs.STARS.toLowerCase()} · {user.public_repos} {gs.REPOS.toLowerCase()}</p>
           </div>
         </div>
         <a
           href={`https://github.com/${USERNAME}`}
           target="_blank"
           rel="noopener noreferrer"
-          class="rounded-lg border border-gray-700 px-3 py-1.5 text-xs text-gray-400 transition hover:border-emerald-500/50 hover:text-emerald-400"
+          class="rounded-lg border border-gray-700 px-3 py-1.5 text-xs text-gray-300 transition hover:border-emerald-500/50 hover:text-emerald-400 hover:bg-gray-800"
         >
           {gs.FOLLOW}
         </a>
@@ -130,28 +135,28 @@ const gs = i18n.GITHUB_STATS;
       <div class="flex items-center justify-around text-center">
         <div>
           <p class="text-lg font-bold text-gray-100 font-mono">{formatNumber(user.public_repos)}</p>
-          <p class="text-xs text-gray-500">{gs.REPOS}</p>
+          <p class="text-xs text-gray-400">{gs.REPOS}</p>
         </div>
         <div class="h-8 w-px bg-gray-800"></div>
         <div>
           <p class="text-lg font-bold text-gray-100 font-mono">{formatNumber(totalStars)}</p>
-          <p class="text-xs text-gray-500">{gs.STARS}</p>
+          <p class="text-xs text-gray-400">{gs.STARS}</p>
         </div>
         <div class="h-8 w-px bg-gray-800"></div>
         <div>
           <p class="text-lg font-bold text-gray-100 font-mono">{formatNumber(user.followers)}</p>
-          <p class="text-xs text-gray-500">{gs.FOLLOWERS}</p>
+          <p class="text-xs text-gray-400">{gs.FOLLOWERS}</p>
         </div>
         <div class="h-8 w-px bg-gray-800"></div>
         <div>
           <p class="text-lg font-bold text-gray-100 font-mono">{formatNumber(user.following)}</p>
-          <p class="text-xs text-gray-500">{gs.FOLLOWING}</p>
+          <p class="text-xs text-gray-400">{gs.FOLLOWING}</p>
         </div>
       </div>
 
       {topLangs.length > 0 && (
         <div class="mt-4 pt-4 border-t border-gray-800">
-          <p class="text-xs text-gray-500 mb-2">{gs.LANGUAGES}</p>
+          <p class="text-xs text-gray-400 mb-2">{gs.LANGUAGES}</p>
           <div class="flex h-2 overflow-hidden rounded-full bg-gray-800">
             {topLangs.map(([lang, count]) => (
               <div
@@ -169,7 +174,7 @@ const gs = i18n.GITHUB_STATS;
                   style={`background-color: ${langColors[lang] || "#6b7280"}`}
                 ></span>
                 {lang}
-                <span class="text-gray-600">{Math.round((count / totalBytes) * 100)}%</span>
+                <span class="text-gray-400 font-mono text-[11px]">{Math.round((count / totalBytes) * 100)}%</span>
               </span>
             ))}
           </div>

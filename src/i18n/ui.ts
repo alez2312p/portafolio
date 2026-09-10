@@ -7,6 +7,7 @@ export const defaultLang = "es";
 
 export const ui = {
   es: {
+    "nav.skills": "Skills",
     "nav.projects": "Proyectos",
     "nav.freelance": "Freelance",
     "nav.experience": "Experiencia",
@@ -14,6 +15,7 @@ export const ui = {
     "nav.contact": "Contacto",
   },
   en: {
+    "nav.skills": "Skills",
     "nav.projects": "Projects",
     "nav.freelance": "Freelance",
     "nav.experience": "Experience",
@@ -21,3 +23,4 @@ export const ui = {
     "nav.contact": "Contact",
   },
 } as const;
+

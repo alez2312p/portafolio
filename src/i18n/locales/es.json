@@ -3,10 +3,10 @@
     "HELLO": "Hola 👋🏽, soy Alejandro P. Lezama",
     "TAGLINE": "Fullstack developer. Construyo productos web y móviles — del prototipo a producción.",
     "AVAILABLE": "Disponible para trabajar",
-    "INTRO": "en desarrollador front-end, back-end y aplicaciones móviles.",
+    "INTRO": "como desarrollador front-end, back-end y móvil.",
     "YEARS_EXPERIENCE": "5 años de experiencia",
     "JOB_TITLE": "Tecnólogo en desarrollo de software.",
-    "CONTENT": "Poseo conocimientos y habilidades en diversos lenguajes y tecnologías.",
+    "CONTENT": "Poseo conocimientos y habilidades sólidas en desarrollo de software de punta a punta.",
     "CONTACT_ME": "Contáctame",
     "EXPERIENCE": "Experiencia",
     "PROJECTS": "Proyectos",
@@ -77,7 +77,14 @@
     }
   ],
   "CONTACT": {
-    "SUBTITLE": "¿Tienes un proyecto en mente o quieres colaborar? Estoy abierto a nuevas oportunidades."
+    "TITLE": "¿Tienes un proyecto en mente?",
+    "SUBTITLE": "Estoy disponible para nuevos proyectos freelance, consultoría o incorporarme a tu equipo a tiempo completo.",
+    "BADGE": "Disponible para trabajar",
+    "RESPONSE_TIME": "Respondo habitualmente en menos de 24 horas",
+    "SEND_EMAIL": "Enviar un correo",
+    "COPY_EMAIL": "Copiar correo",
+    "COPIED": "¡Copiado!",
+    "LINKEDIN": "Conectar en LinkedIn"
   },
   "FOOTER": {
     "CONTACT": "Contacto"
@@ -91,22 +98,22 @@
   },
   "EXPERIENCE": [
     {
-      "TITLE": "Freelance - fullstack",
+      "TITLE": "Desarrollador Fullstack Freelance",
       "COMPANY": "Independiente",
       "DATE": "Actualmente",
-      "DESCRIPTION": "Desarrollo aplicaciones móviles utilizando Dart y el framework Flutter. Construyo APIs con Node.js y manejo conexiones a bases de datos No SQL como MongoDB y Firebase, bases de datos SQL como PostgreSQL, MySQL. Además, desarrollo páginas web con React, Next.js, Tailwind CSS, Shadcn, y CSS, integrándolas mediante APIs."
+      "DESCRIPTION": "Diseño y desarrollo integral de aplicaciones web y móviles para startups y clientes. Construcción de APIs con Node.js, Express y bases de datos relacionales (PostgreSQL, MySQL) y NoSQL (MongoDB, Firebase). Creación de interfaces web modernas y responsivas con React, Next.js y Tailwind CSS, y aplicaciones móviles multiplataforma con Flutter."
     },
     {
-      "TITLE": "Soporte técnico",
-      "COMPANY": "Corporación universitaria Remington",
+      "TITLE": "Soporte técnico e Infraestructura",
+      "COMPANY": "Corporación Universitaria Remington",
       "DATE": "Septiembre 2022 - Febrero 2023",
-      "DESCRIPTION": "Realizar mantenimientos de software y hardware a equipos de computo; desatascar, cambiar toner y configurar impresoras, realizar mantenimientos a la red, configurar equipos de aulas de computo, resolver casos a estudiantes y trabajadores de la universidad."
+      "DESCRIPTION": "Mantenimiento preventivo y correctivo de infraestructura tecnológica (software y hardware), administración de redes locales, configuración de estaciones de trabajo y resolución ágil de incidencias técnicas para estudiantes y personal administrativo."
     },
     {
-      "TITLE": "Desarrollador flutter",
+      "TITLE": "Desarrollador Flutter",
       "COMPANY": "LoopMedia",
       "DATE": "Marzo 2022 - Agosto 2022",
-      "DESCRIPTION": "Optimizar y crear nuevas funciones para aplicaciones moviles con el lenguaje de programación dart y el framework Flutter. Optimizar y crear nuevas funciones para la página web con el Framework de React."
+      "DESCRIPTION": "Desarrollo y optimización de nuevas funcionalidades para aplicaciones móviles con Dart y Flutter. Implementación y mejora de interfaces interactivas para la plataforma web utilizando React."
     }
   ],
   "PROJECTS": [
@@ -197,7 +204,8 @@
       "Despliegue en AWS (practicando con EC2, S3 y Lambda)",
       "Supabase Realtime para funcionalidades en vivo",
       "GraphQL como alternativa a REST en proyectos nuevos"
-    ]
+    ],
+    "UPDATED_DATE": "Actualizado: Septiembre 2026"
   },
   "ABOUT": {
     "CONTENT1": "Soy desarrollador fullstack con 5 años de experiencia construyendo aplicaciones web y móviles. Me enfoco en crear productos funcionales que resuelvan problemas reales, usando tecnologías como React, Next.js, Flutter y Node.js.",
