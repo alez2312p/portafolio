@@ -10,6 +10,7 @@ interface Props {
 
 const { description, title } = Astro.props;
 const { currentLocale } = Astro;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? "https://alejandropl.com");
 ---
 
 <html lang={currentLocale}>
@@ -22,20 +23,28 @@ const { currentLocale } = Astro;
     <meta name="theme-color" content="#030712" />
     <meta name="author" content="Alejandro P. Lezama" />
 
+    <!-- Canonical & Multilingual Alternate Hreflang -->
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="alternate" hreflang="es" href="https://alejandropl.com/" />
+    <link rel="alternate" hreflang="en" href="https://alejandropl.com/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://alejandropl.com/" />
+
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://alez2312p.dev" />
+    <meta property="og:url" content={canonicalURL.href} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="https://alez2312p.dev/og-image.png" />
+    <meta property="og:image" content="https://alejandropl.com/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content={currentLocale === "en" ? "en_US" : "es_ES"} />
+    <meta property="og:locale:alternate" content={currentLocale === "en" ? "es_ES" : "en_US"} />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="https://alez2312p.dev/og-image.png" />
+    <meta name="twitter:image" content="https://alejandropl.com/og-image.png" />
 
     <title>{title}</title>
 
@@ -43,7 +52,7 @@ const { currentLocale } = Astro;
     <script
       is:inline
       defer
-      data-domain="alez2312p.dev"
+      data-domain="alejandropl.com"
       src="https://plausible.io/js/script.js"></script>
 
     <!-- Preload critical fonts -->

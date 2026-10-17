@@ -18,6 +18,8 @@ import AngularIcon from "../icons/Angular.astro";
 import IonicIcon from "../icons/Ionic.astro";
 import ReactIcon from "../icons/React.astro";
 import AstroIcon from "../icons/AstroIcon.astro";
+import ExpoIcon from "../icons/Expo.astro";
+import SQLiteIcon from "../icons/SQLite.astro";
 
 export type SkillLevel = "advanced" | "intermediate" | "learning";
 
@@ -44,61 +46,61 @@ export const TAGSLIST: Record<string, TagEntry> = {
   TAILWIND: {
     name: "Tailwind",
     level: "advanced",
-    class: "bg-[#ffffff] text-[#377cc8]",
+    class: "bg-white text-[#377cc8]",
     icon: TailwindIcon,
   },
   PRISMA: {
     name: "Prisma",
     level: "intermediate",
-    class: "bg-[#090a15] text-[#e2e8f0]",
+    class: "bg-black text-[#e2e8f0]",
     icon: PrismaIcon,
   },
   MONGODB: {
     name: "Mongodb",
     level: "intermediate",
-    class: "bg-[#55b447] text-[#ffffff]",
+    class: "bg-[#55b447] text-white",
     icon: MongodbIcon,
   },
   FIREBASE: {
     name: "Firebase",
     level: "intermediate",
-    class: "bg-[#d72b00] text-[#ffffff]",
+    class: "bg-[#d72b00] text-white",
     icon: FirebaseIcon,
   },
   POSTGRESQL: {
     name: "PostgreSQL",
     level: "intermediate",
-    class: "bg-[#ffffff] text-[#336791]",
+    class: "bg-white text-[#336791]",
     icon: PostgreSQLIcon,
   },
   SUPABASE: {
     name: "Supabase",
     level: "intermediate",
-    class: "bg-[#ffffff] text-[#3fbf8f]",
+    class: "bg-white text-[#3fbf8f]",
     icon: SupabaseIcon,
   },
   MYSQL: {
     name: "MySQL",
     level: "intermediate",
-    class: "bg-[#ffffff] text-[#4479a1]",
+    class: "bg-white text-[#4479a1]",
     icon: MysqlIcon,
   },
   SQLSERVER: {
     name: "SQL SERVER",
     level: "intermediate",
-    class: "bg-[#ffffff] text-[#CC2927]",
+    class: "bg-white text-[#CC2927]",
     icon: SqlServerIcon,
   },
   NODEJS: {
     name: "Node.js",
     level: "advanced",
-    class: "bg-[#333333] text-[#68A063]",
+    class: "bg-black text-[#68A063]",
     icon: NodeJsIcon,
   },
   EXPRESS: {
     name: "Express",
     level: "advanced",
-    class: "bg-[#ffffff] text-[#000000]",
+    class: "bg-white text-black",
     icon: ExpressIcon,
   },
   NESTJS: {
@@ -110,13 +112,13 @@ export const TAGSLIST: Record<string, TagEntry> = {
   FLUTTER: {
     name: "Flutter",
     level: "advanced",
-    class: "bg-[#02569B] text-white",
+    class: "bg-white text-[#1fbcfd]",
     icon: FlutterIcon,
   },
   REACTNATIVE: {
     name: "React Native",
     level: "intermediate",
-    class: "bg-[#222222] text-[#61DAFB]",
+    class: "bg-black text-[#61DAFB]",
     icon: ReactIcon,
   },
   ANGULAR: {
@@ -134,20 +136,32 @@ export const TAGSLIST: Record<string, TagEntry> = {
   REACT: {
     name: "React",
     level: "advanced",
-    class: "bg-[#222222] text-[#61DAFB]",
+    class: "bg-black text-[#61DAFB]",
     icon: ReactIcon,
   },
   ASTRO: {
     name: "Astro",
     level: "intermediate",
-    class: "bg-[#23262D] text-[#FF5A03]",
+    class: "bg-black text-[#FF5A03]",
     icon: AstroIcon,
   },
   GEMINI: {
     name: "Gemini",
     level: "intermediate",
-    class: "bg-[#1c1c28] text-[#8E9BFF]",
+    class: "bg-black text-[#8E9BFF]",
     icon: GeminiIcon,
+  },
+  EXPO: {
+    name: "Expo",
+    level: "advanced",
+    class: "bg-black text-white",
+    icon: ExpoIcon,
+  },
+  SQLITE: {
+    name: "SQLite",
+    level: "advanced",
+    class: "bg-white text-[#003b57]",
+    icon: SQLiteIcon,
   },
 };
 ---

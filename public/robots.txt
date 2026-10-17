@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://alez2312p.dev/sitemap.xml
+Sitemap: https://alejandropl.com/sitemap.xml

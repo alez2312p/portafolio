@@ -2,6 +2,7 @@
 import WebsiteIcon from "../icons/Website.astro";
 import GitHubIcon from "../icons/GitHub.astro";
 import ExpoIcon from "../icons/Expo.astro";
+import DownloadIcon from "../icons/Download.astro";
 import TypeBadge from "./TypeBadge.astro";
 import CaseStudy from "./CaseStudy.astro";
 import { TAGSLIST } from "./Tags.astro";
@@ -40,6 +41,7 @@ interface Props {
   STATUS?: ProjectStatus;
   TYPE?: "web" | "mobile" | "backend";
   EXPO_LINK?: string;
+  APK_LINK?: string;
   CASE_STUDY?: CaseStudyData;
 }
 
@@ -54,6 +56,7 @@ const {
   STATUS,
   TYPE,
   EXPO_LINK,
+  APK_LINK,
   CASE_STUDY,
 } = Astro.props;
 ---
@@ -177,6 +180,26 @@ const {
           >
             <ExpoIcon class="size-4" />
             {i18n.MISC.EXPO_GO}
+          </a>
+        )
+      }
+      {
+        APK_LINK && (
+          <a
+            href={
+              APK_LINK.startsWith("/") || APK_LINK.startsWith("http")
+                ? APK_LINK
+                : `https://${APK_LINK}`
+            }
+            target={APK_LINK.startsWith("http") ? "_blank" : undefined}
+            rel={
+              APK_LINK.startsWith("http") ? "noopener noreferrer" : undefined
+            }
+            download={APK_LINK.split("/").pop() || "construct-track-v1.0.0.apk"}
+            class="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-emerald-400 transition"
+          >
+            <DownloadIcon class="size-4" />
+            {i18n.MISC.APK ?? "APK"}
           </a>
         )
       }

@@ -3,10 +3,10 @@
     "HELLO": "Hola 👋🏽, soy Alejandro P. Lezama",
     "TAGLINE": "Fullstack developer. Construyo productos web y móviles — del prototipo a producción.",
     "AVAILABLE": "Disponible para trabajar",
-    "INTRO": "como desarrollador front-end, back-end y móvil.",
-    "YEARS_EXPERIENCE": "5 años de experiencia",
-    "JOB_TITLE": "Tecnólogo en desarrollo de software.",
-    "CONTENT": "Poseo conocimientos y habilidades sólidas en desarrollo de software de punta a punta.",
+    "INTRO": " construyendo aplicaciones web y móviles. ",
+    "YEARS_EXPERIENCE": "Más de 5 años de experiencia",
+    "JOB_TITLE": "Fullstack Developer & Tecnólogo de Software.",
+    "CONTENT": " Desarrollo soluciones completas de punta a punta: desde arquitecturas backend, bases de datos y plataformas web interactivas, hasta aplicaciones móviles e integraciones con inteligencia artificial.",
     "CONTACT_ME": "Contáctame",
     "EXPERIENCE": "Experiencia",
     "PROJECTS": "Proyectos",
@@ -19,6 +19,7 @@
     "CODE": "Código",
     "PREVIEW": "Sitio web",
     "EXPO_GO": "Expo Go",
+    "APK": "Descargar APK",
     "STATUS_MVP": "MVP",
     "STATUS_ARCHIVED": "Archivado",
     "PRIVATE_CODE": "El código de este proyecto es privado"
@@ -101,7 +102,7 @@
       "TITLE": "Desarrollador Fullstack Freelance",
       "COMPANY": "Independiente",
       "DATE": "Actualmente",
-      "DESCRIPTION": "Diseño y desarrollo integral de aplicaciones web y móviles para startups y clientes. Construcción de APIs con Node.js, Express y bases de datos relacionales (PostgreSQL, MySQL) y NoSQL (MongoDB, Firebase). Creación de interfaces web modernas y responsivas con React, Next.js y Tailwind CSS, y aplicaciones móviles multiplataforma con Flutter."
+      "DESCRIPTION": "Diseño y desarrollo integral de aplicaciones web y móviles para startups y clientes. Construcción de APIs con Node.js, Express y bases de datos relacionales (PostgreSQL, MySQL, SQLite) y NoSQL (MongoDB, Firebase). Creación de interfaces web modernas y responsivas con React, Next.js y Tailwind CSS, y aplicaciones móviles multiplataforma y offline-first con React Native, Expo y Flutter."
     },
     {
       "TITLE": "Soporte técnico e Infraestructura",
@@ -123,7 +124,7 @@
       "TAGS": ["NEXT", "TYPESCRIPT", "TAILWIND", "SUPABASE", "GEMINI"],
       "STATUS": "mvp",
       "PRIVATE": true,
-      "DESCRIPTION": "Dashboard financiero personal con inteligencia artificial. Registra gastos e ingresos, categoriza automáticamente con IA, visualiza tendencias y gestiona presupuestos.",
+      "DESCRIPTION": "Aplicación web para finanzas personales que simplifica el control de gastos e ingresos sin necesidad de vincular cuentas bancarias. Utiliza inteligencia artificial para clasificar movimientos automáticamente, proyectar presupuestos y visualizar el comportamiento financiero mensual.",
       "LINK": "moneto.alejandropl.com",
       "GITHUB": "github.com/alez2312p/moneto",
       "CASE_STUDY": {
@@ -139,7 +140,7 @@
       "TAGS": ["NEXT", "TAILWIND", "TYPESCRIPT", "SUPABASE"],
       "STATUS": "mvp",
       "PRIVATE": true,
-      "DESCRIPTION": "Una aplicación web y móvil para la gestión de citas y turnos en barberías, salones de belleza y negocios similares. Permite a los clientes reservar citas, a los empleados gestionar su agenda y a los administradores supervisar el negocio de manera eficiente.",
+      "DESCRIPTION": "Sistema integral de reservas y turnos en tiempo real para barberías y centros de estética. Automatiza el agendamiento para clientes, sincroniza los horarios del personal y ofrece a los administradores un panel de control con métricas de rendimiento y ventas.",
       "LINK": "barberflow-sigma.vercel.app/explore",
       "GITHUB": "github.com/alez2312p/barberflow",
       "CASE_STUDY": {
@@ -150,11 +151,30 @@
       }
     },
     {
+      "IMAGE": "/constructtrack-mobile.webp",
+      "TITLE": "ConstructTrack Mobile",
+      "STATUS": "mvp",
+      "TYPE": "mobile",
+      "PRIVATE": true,
+      "TAGS": ["REACTNATIVE", "EXPO", "SQLITE", "TYPESCRIPT"],
+      "DESCRIPTION": "Aplicación móvil diseñada para el control y despacho de materiales en obras de construcción sin cobertura celular. Permite escanear códigos industriales, validar existencias al instante y capturar firmas digitales en campo, sincronizando automáticamente los movimientos con la oficina central al recuperar conexión.",
+      "LINK": "",
+      "GITHUB": "github.com/alez2312p/construct-track-app",
+      "APK_LINK": "https://github.com/alez2312p/portafolio/releases/download/v1.0.0/construct-track-v1.0.0.apk",
+      "CASE_STUDY": {
+        "PROBLEM": "En obras de construcción, túneles y vías rurales, la cobertura celular es nula o inestable. Registrar entradas y salidas en planillas de papel generaba pérdidas millonarias, desabastecimiento imprevisto y nula trazabilidad de materiales entre bodegas y frentes de trabajo.",
+        "SOLUTION": "Se construyó ConstructTrack Mobile: una aplicación móvil que opera de forma autónoma en zonas sin cobertura celular ni internet. Permite al personal registrar despachos de materiales con firma digital, validar existencias en tiempo real directamente en el dispositivo, escanear códigos de barras con la cámara nativa y sincronizar los datos de manera automática con la oficina central al recuperar la conexión.",
+        "ARCHITECTURE": "React Native 0.86 (New Architecture con TurboModules) y Expo SDK 57 con TypeScript estricto. Base de datos SQLite en modo WAL para transacciones concurrentes sin bloqueos de UI. Patrón Outbox Queue con orden topológico de dependencias. Sincronización diferida mediante API REST en Next.js hacia PostgreSQL (Neon). Doble factor de autorización con PIN criptográfico (SHA-256 + salt) y biometría nativa. Suite de 38 pruebas unitarias con Jest (100% aprobadas).",
+        "RESULTS": "Operación continua en obra sin interrupciones por falta de señal. Se eliminaron los descuadres de inventario y la pérdida de remisiones en papel gracias al registro digital inmediato en campo y la sincronización segura con la base de datos central."
+      }
+    },
+    {
       "IMAGE": "/constructtrack.webp",
-      "TITLE": "Constructtrack",
+      "TITLE": "ConstructTrack",
+      "TYPE": "web",
       "STATUS": "mvp",
       "TAGS": ["NEXT", "TAILWIND", "TYPESCRIPT", "POSTGRESQL", "PRISMA"],
-      "DESCRIPTION": "ConstructTrack es un sistema completo de gestión de inventario diseñado específicamente para la industria de la construcción. Permite controlar materiales, registrar movimientos de entradas y salidas, gestionar categorías y ubicaciones, y generar alertas cuando el stock alcanza niveles críticos.",
+      "DESCRIPTION": "Plataforma web de inventario para empresas constructoras. Centraliza el control de entradas y salidas de materiales entre múltiples proyectos y bodegas, emitiendo alertas tempranas de desabastecimiento y reportes de consumo en tiempo real.",
       "LINK": "constructtrack.alejandropl.com",
       "GITHUB": "github.com/alez2312p/constructtrack",
       "CASE_STUDY": {
@@ -178,37 +198,37 @@
       "TITLE": "Outlet",
       "TAGS": ["NEXT", "TYPESCRIPT", "TAILWIND", "SUPABASE", "PRISMA"],
       "STATUS": "mvp",
-      "DESCRIPTION": "E-commerce multi-tenant para outlets de ropa. Un solo sistema sirve a muchas tiendas (cada una con su dominio o sub-ruta) con costo de infraestructura $0. Incluye catálogo, carrito, checkout por WhatsApp, panel admin con inventario, variantes, pedidos, dashboard y migración de datos.",
+      "DESCRIPTION": "Plataforma de comercio electrónico multi-tienda para marcas y outlets de ropa. Permite a múltiples negocios gestionar su propio catálogo independiente, inventario por tallas y colores, pedidos directos por WhatsApp y métricas de venta desde un panel centralizado.",
       "LINK": "outlet.alejandropl.com/demo-outlet/login",
       "GITHUB": "github.com/alez2312p/outlet",
       "CASE_STUDY": {
         "PROBLEM": "Los outlets de ropa pequeños necesitaban una presencia digital propia (catálogo, carrito, pedidos) pero no tenían presupuesto para desarrollar y mantener un e-commerce individual. Tampoco existía una solución multi-tenant que permitiera compartir infraestructura manteniendo la identidad de marca de cada tienda.",
         "SOLUTION": "Se construyó Outlet: una plataforma multi-tenant donde cada tienda vive en su propio slug (/demo-outlet) o dominio personalizado. Incluye tienda pública (catálogo, ficha producto, carrito, checkout WhatsApp, cuenta cliente) y panel de administración completo (dashboard KPIs, productos con variantes talla×color×stock, categorías, pedidos con estados y ajuste de stock automático, settings de marca/envíos/WhatsApp, migración JSON/CSV). Modo demo solo-lectura para probar sin riesgo.",
         "ARCHITECTURE": "Next.js 16 App Router + React 19 + TypeScript + Tailwind CSS + Lucide. Base de datos PostgreSQL en Supabase con Prisma ORM. Auth Supabase (email/password + Google OAuth) host-aware para redirigir correctamente en dominios custom. Proxy en middleware para reescritura transparente midominio.com → /[slug]. Zustand para carrito global.",
-        "RESULTS": "Sistema listo para producción con 387 tests, build limpio y tsc sin errores. Multi-tenant real funcionando: demo-outlet operativo en outlet.alejandropl.com/demo-outlet. Costo de infraestructura $0 aprovechando planes gratuitos. Arquitectura preparada para dominios custom (pendiente UI en panel)."
+        "RESULTS": "Sistema listo para producción con 387 tests, build limpio y tsc sin errores. Multi-tenant real funcionando: demo-outlet operativo en outlet.alejandropl.com/demo-outlet. Alta eficiencia en recursos con arquitectura cloud optimizada para producción. Arquitectura preparada para dominios custom (pendiente UI en panel)."
       }
     }
   ],
   "NOW": {
     "LEARNING": [
-      "IA para producto: integrando OpenAI en ConstructTrack para predecir demanda de materiales",
-      "CI/CD y Docker para tener deploys automáticos y entornos consistentes",
-      "Serverless con Cloud Functions para features sin servidor dedicado"
+      "Inteligencia Artificial para producto: modelos predictivos de demanda y cálculo de insumos en obra",
+      "CI/CD y automatización: pipelines con GitHub Actions y contenedores Docker para deploys consistentes",
+      "Arquitectura Cloud: despliegue de funciones serverless y microservicios escalables"
     ],
     "BUILDING": [
-      "Multi-business inventory app — buscando beta testers. ¿Tienes un negocio con inventario?",
-      "Setty — plataforma de agendamiento. En desarrollo activo.",
-      "Nuevas features para ConstructTrack: reportes exportables y multi-sitio"
+      "ConstructTrack: motor de sincronización bidireccional y resolución de conflictos móvil-nube",
+      "Setty (BarberFlow): automatización de recordatorios por WhatsApp y pasarela de cobros",
+      "Outlet: analítica comercial avanzada y soporte para dominios personalizados por tienda"
     ],
     "EXPLORING": [
-      "Despliegue en AWS (practicando con EC2, S3 y Lambda)",
-      "Supabase Realtime para funcionalidades en vivo",
-      "GraphQL como alternativa a REST en proyectos nuevos"
+      "Local-First & CRDTs: arquitecturas de sincronización colaborativa y alta resiliencia sin red",
+      "GraphQL como alternativa a REST para consultas flexibles en aplicaciones complejas",
+      "On-Device AI: ejecución de modelos ligeros directamente en el cliente móvil"
     ],
-    "UPDATED_DATE": "Actualizado: Septiembre 2026"
+    "UPDATED_DATE": "Actualizado: Octubre 2026"
   },
   "ABOUT": {
-    "CONTENT1": "Soy desarrollador fullstack con 5 años de experiencia construyendo aplicaciones web y móviles. Me enfoco en crear productos funcionales que resuelvan problemas reales, usando tecnologías como React, Next.js, Flutter y Node.js.",
+    "CONTENT1": "Soy desarrollador fullstack con más de 5 años de experiencia construyendo aplicaciones web y móviles escalables. Me enfoco en crear productos de alto rendimiento que resuelvan problemas reales, utilizando tecnologías como React, Next.js, React Native, Flutter y Node.js.",
     "CONTENT2": "Trabajo como freelancer desarrollando MVPs, sistemas de gestión y plataformas de agendamiento. Me gusta entender el problema de negocio antes de escribir una sola línea de código.",
     "CONTENT3": "Miembro de Team1 en Avalanche Network y co-fundador de dotlabs__, una comunidad enfocada en blockchain y Web3. Mentor y organizador en hackathones en Medellín y Bogotá."
   }

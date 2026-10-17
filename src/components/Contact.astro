@@ -39,18 +39,6 @@ const contact = i18n.CONTACT;
         <span>{contact.SEND_EMAIL ?? "Enviar correo"}</span>
       </a>
 
-      <button
-        id="copy-email-btn"
-        type="button"
-        class="group inline-flex items-center gap-2 rounded-xl border border-gray-700 bg-gray-900 px-5 py-3 text-sm font-medium text-gray-300 transition hover:border-emerald-500/50 hover:text-emerald-400 hover:bg-gray-800 cursor-pointer"
-        data-email="alejandropl2509@gmail.com"
-      >
-        <svg class="size-4 text-gray-400 group-hover:text-emerald-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-        </svg>
-        <span id="copy-text">{contact.COPY_EMAIL ?? "Copiar correo"}</span>
-      </button>
-
       <a
         href="https://www.linkedin.com/in/alejandro-perez-lezama/"
         target="_blank"
@@ -73,28 +61,4 @@ const contact = i18n.CONTACT;
     </div>
   </div>
 </div>
-
-<script>
-  const copyBtn = document.getElementById("copy-email-btn");
-  const copyText = document.getElementById("copy-text");
-
-  if (copyBtn && copyText) {
-    const defaultLabel = copyText.textContent;
-    copyBtn.addEventListener("click", async () => {
-      const email = copyBtn.getAttribute("data-email") || "alejandropl2509@gmail.com";
-      try {
-        await navigator.clipboard.writeText(email);
-        copyText.textContent = "✓ " + (copyBtn.getAttribute("data-copied") || "Copiado");
-        copyBtn.classList.add("border-emerald-500/60", "text-emerald-400");
-        setTimeout(() => {
-          copyText.textContent = defaultLabel;
-          copyBtn.classList.remove("border-emerald-500/60", "text-emerald-400");
-        }, 2000);
-      } catch {
-        // Fallback
-        window.location.href = `mailto:${email}`;
-      }
-    });
-  }
-</script>
 

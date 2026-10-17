@@ -1,44 +1,100 @@
 ---
 const { currentLocale } = Astro;
 
-const sections = currentLocale === "en" ? [
-  { id: "skills", label: "Skills", tech: "Frontend · Backend · Mobile" },
-  { id: "projects", label: "Projects", tech: "Next.js · Supabase · Prisma" },
-  { id: "freelance", label: "Freelance", tech: "Flutter · Next.js · Node.js" },
-  { id: "experience", label: "Experience", tech: "React · Next.js · TypeScript" },
-  { id: "about", label: "About", tech: "Fullstack · Web3 · Community" },
-  { id: "github-stats", label: "GitHub", tech: "Repos · Stars · Languages" },
-  { id: "now", label: "Right now", tech: "AI · Docker · Serverless" },
-  { id: "contact", label: "Contact", tech: "Let's connect" },
-] : [
-  { id: "skills", label: "Skills", tech: "Frontend · Backend · Mobile" },
-  { id: "projects", label: "Proyectos", tech: "Next.js · Supabase · Prisma" },
-  { id: "freelance", label: "Freelance", tech: "Flutter · Next.js · Node.js" },
-  { id: "experience", label: "Experiencia", tech: "React · Next.js · TypeScript" },
-  { id: "about", label: "Sobre mí", tech: "Fullstack · Web3 · Comunidad" },
-  { id: "github-stats", label: "GitHub", tech: "Repos · Estrellas · Lenguajes" },
-  { id: "now", label: "Ahora", tech: "IA · Docker · Serverless" },
-  { id: "contact", label: "Contacto", tech: "Hablemos" },
-];
+const sections =
+  currentLocale === "en"
+     ? [
+         { id: "skills", label: "Skills", tech: "Frontend · Backend · DB · Mobile" },
+         {
+           id: "projects",
+           label: "Projects",
+           tech: "Next.js · React Native · Supabase",
+         },
+         {
+           id: "freelance",
+           label: "Freelance",
+           tech: "React · Flutter · Node.js",
+         },
+         {
+           id: "experience",
+           label: "Experience",
+           tech: "React · Next.js · TypeScript",
+         },
+         { id: "about", label: "About", tech: "Fullstack · Web3 · Community" },
+         {
+           id: "github-stats",
+           label: "GitHub",
+           tech: "Repos · Stars · Languages",
+         },
+         { id: "now", label: "Right now", tech: "AI · Local-First · Cloud" },
+         { id: "contact", label: "Contact", tech: "Let's connect" },
+       ]
+     : [
+         { id: "skills", label: "Skills", tech: "Frontend · Backend · DB · Mobile" },
+         {
+           id: "projects",
+           label: "Proyectos",
+           tech: "Next.js · React Native · Supabase",
+         },
+         {
+           id: "freelance",
+           label: "Freelance",
+           tech: "React · Flutter · Node.js",
+         },
+         {
+           id: "experience",
+           label: "Experiencia",
+           tech: "React · Next.js · TypeScript",
+         },
+         {
+           id: "about",
+           label: "Sobre mí",
+           tech: "Fullstack · Web3 · Comunidad",
+         },
+         {
+           id: "github-stats",
+           label: "GitHub",
+           tech: "Repos · Estrellas · Lenguajes",
+         },
+         { id: "now", label: "Ahora", tech: "IA · Local-First · Cloud" },
+         { id: "contact", label: "Contacto", tech: "Hablemos" },
+       ];
 ---
 
-<div id="stack-tracker" class="fixed right-4 top-1/2 -translate-y-1/2 z-40 hidden lg:block">
-  <div class="flex flex-col items-center gap-3 rounded-xl border border-gray-800 bg-gray-950/80 px-3 py-4 backdrop-blur-sm shadow-xl">
-    {sections.map((section) => (
-      <a
-        href={`#${section.id}`}
-        aria-label={section.label}
-        data-section-id={section.id}
-        data-label={section.label}
-        data-tech={section.tech}
-        class="stack-dot size-2 rounded-full bg-gray-600 hover:bg-emerald-400/70 transition-all duration-300 hover:scale-125"
-      />
-    ))}
+<div
+  id="stack-tracker"
+  class="fixed right-4 top-1/2 -translate-y-1/2 z-40 hidden lg:block"
+>
+  <div
+    class="flex flex-col items-center gap-3 rounded-xl border border-gray-800 bg-gray-950/80 px-3 py-4 backdrop-blur-sm shadow-xl"
+  >
+    {
+      sections.map((section) => (
+        <a
+          href={`#${section.id}`}
+          aria-label={section.label}
+          data-section-id={section.id}
+          data-label={section.label}
+          data-tech={section.tech}
+          class="stack-dot size-2 rounded-full bg-gray-600 hover:bg-emerald-400/70 transition-all duration-300 hover:scale-125"
+        />
+      ))
+    }
   </div>
-  <div id="stack-label" class="pointer-events-none absolute right-full mr-3 top-1/2 -translate-y-1/2 w-max opacity-0 transition-opacity duration-300">
-    <div class="rounded-lg border border-gray-800 bg-gray-950/95 px-3 py-2 text-xs text-gray-400 whitespace-nowrap shadow-xl backdrop-blur-sm">
-      <span id="stack-section-label" class="text-emerald-400 font-semibold block">Experience</span>
-      <span id="stack-tech-label" class="block text-gray-400 text-[11px] mt-0.5">React · Next.js · TypeScript</span>
+  <div
+    id="stack-label"
+    class="pointer-events-none absolute right-full mr-3 top-1/2 -translate-y-1/2 w-max opacity-0 transition-opacity duration-300"
+  >
+    <div
+      class="rounded-lg border border-gray-800 bg-gray-950/95 px-3 py-2 text-xs text-gray-400 whitespace-nowrap shadow-xl backdrop-blur-sm"
+    >
+      <span
+        id="stack-section-label"
+        class="text-emerald-400 font-semibold block">Experience</span
+      >
+      <span id="stack-tech-label" class="block text-gray-400 text-[11px] mt-0.5"
+        >React · Next.js · TypeScript</span
+      >
     </div>
   </div>
 </div>
@@ -62,18 +118,20 @@ const sections = currentLocale === "en" ? [
           dots.forEach((dot) => {
             const isMatch = dot.getAttribute("data-section-id") === activeId;
             if (isMatch) {
-              dot.className = "stack-dot size-2.5 rounded-full bg-emerald-400 transition-all duration-300 scale-110 shadow-sm shadow-emerald-400/50";
+              dot.className =
+                "stack-dot size-2.5 rounded-full bg-emerald-400 transition-all duration-300 scale-110 shadow-sm shadow-emerald-400/50";
               sectionLabel.textContent = dot.getAttribute("data-label") || "";
               techLabel.textContent = dot.getAttribute("data-tech") || "";
             } else {
-              dot.className = "stack-dot size-2 rounded-full bg-gray-600 hover:bg-emerald-400/70 transition-all duration-300 hover:scale-125";
+              dot.className =
+                "stack-dot size-2 rounded-full bg-gray-600 hover:bg-emerald-400/70 transition-all duration-300 hover:scale-125";
             }
           });
           label.classList.remove("opacity-0");
           label.classList.add("opacity-100");
         }
       },
-      { threshold: 0.25, rootMargin: "-80px 0px 0px 0px" }
+      { threshold: 0.25, rootMargin: "-80px 0px 0px 0px" },
     );
 
     dots.forEach((dot) => {

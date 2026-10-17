@@ -10,7 +10,7 @@ type TagKey = keyof typeof TAGSLIST;
 const dotColors: Record<SkillLevel, string> = {
   advanced: "bg-emerald-400",
   intermediate: "bg-amber-400",
-  learning: "bg-sky-400",
+  learning: "bg-violet-400",
 };
 
 const skills: { category: string; items: TagKey[] }[] = [
@@ -19,23 +19,24 @@ const skills: { category: string; items: TagKey[] }[] = [
     items: ["REACT", "NEXT", "ASTRO", "ANGULAR", "TYPESCRIPT", "TAILWIND"],
   },
   {
-    category: "Mobile",
-    items: ["FLUTTER", "REACTNATIVE", "IONIC"],
-  },
-  {
-    category: "Backend",
-    items: ["NODEJS", "EXPRESS", "NESTJS", "PRISMA"],
+    category: "Backend & AI",
+    items: ["NODEJS", "EXPRESS", "NESTJS", "PRISMA", "GEMINI"],
   },
   {
     category: "Database",
     items: [
-      "MONGODB",
       "POSTGRESQL",
-      "FIREBASE",
+      "SQLITE",
       "SUPABASE",
+      "MONGODB",
+      "FIREBASE",
       "MYSQL",
       "SQLSERVER",
     ],
+  },
+  {
+    category: "Mobile",
+    items: ["FLUTTER", "REACTNATIVE", "EXPO", "IONIC"],
   },
 ];
 ---
@@ -92,7 +93,7 @@ const skills: { category: string; items: TagKey[] }[] = [
       {i18n.SKILLS.INTERMEDIATE}
     </span>
     <span class="inline-flex items-center gap-1.5">
-      <span class="inline-block size-2 rounded-full bg-sky-400"></span>
+      <span class="inline-block size-2 rounded-full bg-violet-400"></span>
       {i18n.SKILLS.LEARNING}
     </span>
   </div>

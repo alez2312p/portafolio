@@ -22,3 +22,7 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# large binary releases (hosted on GitHub Releases)
+*.apk
+releases/
