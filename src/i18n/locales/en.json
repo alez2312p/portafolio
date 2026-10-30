@@ -207,6 +207,23 @@
         "ARCHITECTURE": "Next.js 16 App Router + React 19 + TypeScript + Tailwind CSS + Lucide. PostgreSQL on Supabase with Prisma ORM. Supabase Auth (email/password + Google OAuth) host-aware for correct redirects on custom domains. Middleware proxy for transparent rewrite customdomain.com → /[slug].",
         "RESULTS": "Production-ready system with 387 tests, clean build, zero tsc errors. Real multi-tenant working: demo-outlet live at outlet.alejandropl.com/demo-outlet. Highly resource-efficient cloud architecture engineered for scale. Architecture ready for custom domains (UI in panel pending)."
       }
+    },
+    {
+      "IMAGE": "/maquirent.webp",
+      "TITLE": "Maquirent",
+      "TAGS": ["NEXT", "TYPESCRIPT", "TAILWIND", "POSTGRESQL", "PRISMA"],
+      "STATUS": "mvp",
+      "TYPE": "web",
+      "PRIVATE": true,
+      "DESCRIPTION": "Web platform for heavy machinery rental and logistics management in Colombia. Enables contractors to check real-time fleet availability, calculate formal transparent quotes with Colombian tax rules (COP, SENA operator, VAT, freight), and generate legal PDF contracts instantly.",
+      "LINK": "maquirent.alejandropl.com",
+      "GITHUB": "github.com/alez2312p/maquirent",
+      "CASE_STUDY": {
+        "PROBLEM": "In civil construction and infrastructure, renting heavy equipment was traditionally handled through informal, manual calls and spreadsheets. This led to double-booking conflicts, hidden logistical fees, delayed approvals, and days wasted preparing legal rental agreements.",
+        "SOLUTION": "Built Maquirent: an end-to-end web platform that digitalizes heavy machinery leasing. Features a real-time availability catalog with overlap prevention, a transparent COP pricing engine (19% VAT, SENA-certified operator, security deposit, on-site freight), generation of formal PDF contracts, and dedicated portals for both customers and administrators with key metrics and one-click WhatsApp contact.",
+        "ARCHITECTURE": "Next.js 15 App Router + React 19 + TypeScript + Tailwind CSS with shadcn/ui. Backend with Route Handlers, Server Actions, and NextAuth.js v5 for role-based access control (ADMIN / CLIENT). PostgreSQL database with Prisma ORM v7. PDF generation and schema validation via Zod.",
+        "RESULTS": "Instant formal quotes with tax breakdown and reduction of contract issuance time from hours to seconds."
+      }
     }
   ],
   "NOW": {

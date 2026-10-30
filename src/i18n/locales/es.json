@@ -207,6 +207,23 @@
         "ARCHITECTURE": "Next.js 16 App Router + React 19 + TypeScript + Tailwind CSS + Lucide. Base de datos PostgreSQL en Supabase con Prisma ORM. Auth Supabase (email/password + Google OAuth) host-aware para redirigir correctamente en dominios custom. Proxy en middleware para reescritura transparente midominio.com → /[slug]. Zustand para carrito global.",
         "RESULTS": "Sistema listo para producción con 387 tests, build limpio y tsc sin errores. Multi-tenant real funcionando: demo-outlet operativo en outlet.alejandropl.com/demo-outlet. Alta eficiencia en recursos con arquitectura cloud optimizada para producción. Arquitectura preparada para dominios custom (pendiente UI en panel)."
       }
+    },
+    {
+      "IMAGE": "/maquirent.webp",
+      "TITLE": "Maquirent",
+      "TAGS": ["NEXT", "TYPESCRIPT", "TAILWIND", "POSTGRESQL", "PRISMA"],
+      "STATUS": "mvp",
+      "TYPE": "web",
+      "PRIVATE": true,
+      "DESCRIPTION": "Plataforma web para la cotización formal, gestión logística y alquiler de maquinaria pesada en Colombia. Permite consultar disponibilidad en tiempo real, liquidar cotizaciones con tarifas en COP (IVA, flete, operador SENA) y generar contratos legales en PDF al instante.",
+      "LINK": "maquirent.alejandropl.com",
+      "GITHUB": "github.com/alez2312p/maquirent",
+      "CASE_STUDY": {
+        "PROBLEM": "En el sector de la construcción e infraestructura, el arriendo de maquinaria pesada y amarilla se gestionaba tradicionalmente de forma manual, informal y dispersa. Esto causaba falta de visibilidad en disponibilidad real, inconsistencias en tarifas de flete/operador/IVA, dobles reservas y demoras de días en la formalización de contratos legales.",
+        "SOLUTION": "Se construyó Maquirent: una plataforma web que digitaliza el alquiler y cotización formal de maquinaria pesada. Integra catálogo en tiempo real con validación anti-solapamiento de fechas, motor financiero transparente con tarifas colombianas (COP, IVA 19%, operador certificado SENA, depósito y flete), generación automática de contratos oficiales en PDF y portales especializados para clientes y administradores con métricas clave y enlace directo a WhatsApp.",
+        "ARCHITECTURE": "Next.js 15 App Router + React 19 + TypeScript + Tailwind CSS con shadcn/ui. Backend con Route Handlers y Server Actions con NextAuth.js v5 para control de acceso basado en roles (ADMIN / CLIENT). Base de datos PostgreSQL con Prisma ORM v7. Generación de PDFs contractuales y validación estricta de esquemas con Zod.",
+        "RESULTS": "Cotizaciones formales instantáneas con desglose tributario y reducción del tiempo de emisión de contratos de horas a segundos."
+      }
     }
   ],
   "NOW": {
