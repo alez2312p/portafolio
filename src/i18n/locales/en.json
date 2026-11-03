@@ -43,9 +43,9 @@
     "RESULTS": "Results"
   },
   "NOW_LABELS": {
-    "LEARNING": "📚 Learning",
-    "BUILDING": "🛠️ Building",
-    "EXPLORING": "🎯 Exploring"
+    "LEARNING": "Learning",
+    "BUILDING": "Building",
+    "EXPLORING": "Exploring"
   },
   "FREELANCE": [
     {
@@ -166,6 +166,24 @@
         "SOLUTION": "ConstructTrack Mobile was built: a mobile app that operates autonomously in areas without cellular reception or internet. It allows on-site teams to log material dispatches with digital signatures, validate inventory levels directly on the device, scan industrial barcodes, and automatically sync all transactions with headquarters once connectivity returns.",
         "ARCHITECTURE": "React Native 0.86 (New Architecture with TurboModules) and Expo SDK 57 with strict TypeScript. Local SQLite database in WAL mode for lock-free concurrent transactions. Outbox Queue pattern with strict topological dependency ordering. Deferred synchronization via Next.js REST API to PostgreSQL (Neon). Two-factor authorization with salted SHA-256 PIN and native biometrics (Hardware Keystore/Keychain). Automated test suite of 38 unit tests with Jest (100% pass).",
         "RESULTS": "Uninterrupted on-site operations with full network-drop resilience. Material losses and inventory discrepancies from paper delivery notes were eliminated through immediate digital logging and reliable automatic cloud synchronization."
+      }
+    },
+    {
+      "IMAGE": "/field-inspector.webp",
+      "TITLE": "FieldInspector",
+      "STATUS": "mvp",
+      "TYPE": "mobile",
+      "PRIVATE": true,
+      "TAGS": ["REACTNATIVE", "EXPO", "SQLITE", "TYPESCRIPT"],
+      "DESCRIPTION": "Forensic-grade mobile application for technical inspection and civil engineering site audits built with an Offline-First architecture. Enables recording findings, immutable photographic evidence with forensic watermarking and SHA-256 hashing, voice notes, digital signatures, and biometric sealing to export executive PDF reports without internet.",
+      "LINK": "",
+      "GITHUB": "github.com/alez2312p/field-inspector",
+      "APK_LINK": "https://github.com/alez2312p/portafolio/releases/download/v-1.0.0/fieldInspect.apk",
+      "CASE_STUDY": {
+        "PROBLEM": "In construction, infrastructure, and technical auditing, on-site inspections in basements, tunnels, or rural job sites face zero cellular connectivity. Additionally, standard mobile photos lack verified metadata or tamper-proof timestamps, risking rejection during legal disputes, regulatory audits, or insurance claims.",
+        "SOLUTION": "Built FieldInspector: a forensic mobile solution that runs entirely without internet. Enables inspectors to document technical findings, capture on-site photos with direct vector pixel stamping (high-precision GPS, certified ISO 8601 timestamp, and SHA-256 cryptographic hash), record voice notes, collect smooth Bezier curve signatures, lock reports via native biometrics (Face ID / fingerprint), and compile executive PDF reports autonomously on-device.",
+        "ARCHITECTURE": "React Native 0.88 & Expo SDK 58 with React 19 and strict TypeScript. Local SQLite database in WAL mode modeled with Drizzle ORM and collision-free CUID2 IDs. Off-screen graphics rendering with @shopify/react-native-skia for forensic watermarking and signature canvas. Cryptographic hashing via expo-crypto. Defensive location provider with timeout fallbacks. On-device PDF compilation using expo-print and persistent Outbox queue for resilient background sync.",
+        "RESULTS": "Complete evidentiary integrity and forensic compliance for site audits. Uninterrupted technical operation in connectivity-deprived environments with instant generation of certified executive PDF reports and tamper-proof traceability."
       }
     },
     {

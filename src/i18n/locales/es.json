@@ -43,9 +43,9 @@
     "RESULTS": "Resultados"
   },
   "NOW_LABELS": {
-    "LEARNING": "📚 Aprendiendo",
-    "BUILDING": "🛠️ Construyendo",
-    "EXPLORING": "🎯 Explorando"
+    "LEARNING": "Aprendiendo",
+    "BUILDING": "Construyendo",
+    "EXPLORING": "Explorando"
   },
   "FREELANCE": [
     {
@@ -166,6 +166,24 @@
         "SOLUTION": "Se construyó ConstructTrack Mobile: una aplicación móvil que opera de forma autónoma en zonas sin cobertura celular ni internet. Permite al personal registrar despachos de materiales con firma digital, validar existencias en tiempo real directamente en el dispositivo, escanear códigos de barras con la cámara nativa y sincronizar los datos de manera automática con la oficina central al recuperar la conexión.",
         "ARCHITECTURE": "React Native 0.86 (New Architecture con TurboModules) y Expo SDK 57 con TypeScript estricto. Base de datos SQLite en modo WAL para transacciones concurrentes sin bloqueos de UI. Patrón Outbox Queue con orden topológico de dependencias. Sincronización diferida mediante API REST en Next.js hacia PostgreSQL (Neon). Doble factor de autorización con PIN criptográfico (SHA-256 + salt) y biometría nativa. Suite de 38 pruebas unitarias con Jest (100% aprobadas).",
         "RESULTS": "Operación continua en obra sin interrupciones por falta de señal. Se eliminaron los descuadres de inventario y la pérdida de remisiones en papel gracias al registro digital inmediato en campo y la sincronización segura con la base de datos central."
+      }
+    },
+    {
+      "IMAGE": "/field-inspector.webp",
+      "TITLE": "FieldInspector",
+      "STATUS": "mvp",
+      "TYPE": "mobile",
+      "PRIVATE": true,
+      "TAGS": ["REACTNATIVE", "EXPO", "SQLITE", "TYPESCRIPT"],
+      "DESCRIPTION": "Solución móvil de grado pericial y auditoría técnica en obra civil bajo arquitectura Offline-First. Permite registrar hallazgos, capturar evidencias fotográficas con estampado forense y hash criptográfico SHA-256, notas de voz, firmas vectoriales y sellado biométrico para emitir informes PDF sin internet.",
+      "LINK": "",
+      "GITHUB": "github.com/alez2312p/field-inspector",
+      "APK_LINK": "https://github.com/alez2312p/portafolio/releases/download/v-1.0.0/fieldInspect.apk",
+      "CASE_STUDY": {
+        "PROBLEM": "En proyectos de construcción e infraestructura, las inspecciones técnicas en sótanos, túneles o zonas rurales carecen de cobertura celular. Además, las fotos convencionales carecen de metadatos certificados o marcas de tiempo inmutables, dejando actas y evidencias vulnerables a modificaciones o rechazos en auditorías y litigios.",
+        "SOLUTION": "Se construyó FieldInspector: una aplicación móvil pericial que opera 100% de forma autónoma sin internet. Permite registrar hallazgos por checklist, capturar fotos con estampado gráfico vectorial directo sobre píxeles (coordenadas GPS de alta precisión, marca temporal ISO 8601 y hash SHA-256), grabar notas de voz, registrar firmas digitales vectoriales en Skia, bloquear actas con biometría nativa y emitir informes PDF certificados en el dispositivo.",
+        "ARCHITECTURE": "React Native 0.88 y Expo SDK 58 con React 19 y TypeScript estricto. Base de datos SQLite en modo WAL modelada con Drizzle ORM y generación de identificadores CUID2. Procesamiento gráfico off-screen con @shopify/react-native-skia para estampado forense y captura de firmas con curvas Bezier. Criptografía con expo-crypto, geolocalización defensiva con timeout, generación de informes con expo-print y cola Outbox persistente para sincronización diferida.",
+        "RESULTS": "Validez probatoria total y blindaje técnico en auditorías periciales de obra. Operación continua y confiable en ambientes hostiles sin cobertura, reduciendo a cero el riesgo de alteración de evidencias y automatizando la entrega de informes técnicos de días a minutos."
       }
     },
     {

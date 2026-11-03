@@ -18,16 +18,17 @@ const now = i18n.NOW;
 ---
 
 <div class="flex flex-col">
-  <div class="mb-12 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+  <div
+    class="mb-12 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
+  >
     <h2 class="inline-flex items-center gap-3 text-2xl font-bold text-gray-100">
       <span class="text-emerald-400 text-2xl">⚡</span>
       {i18n.HOME.NOW}
-      <span class="hidden sm:inline-block h-px w-24 bg-gray-800 ml-2"></span>
     </h2>
     {
       now.UPDATED_DATE && (
         <span class="inline-flex items-center gap-1.5 self-start sm:self-auto rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 text-xs font-mono text-emerald-400">
-          <span class="size-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span class="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
           {now.UPDATED_DATE}
         </span>
       )
@@ -35,18 +36,22 @@ const now = i18n.NOW;
   </div>
 
   <div class="grid gap-6 sm:grid-cols-3">
-    {NOW.map(({ key }) => (
-      <div class="rounded-xl border border-gray-800 bg-gray-900/50 p-5">
-        <h3 class="text-sm font-semibold text-gray-300 mb-4">{labels[key]}</h3>
-        <ul class="space-y-2">
-          {now[key].map((item: string) => (
-            <li class="flex items-start gap-2 text-sm text-gray-400">
-              <span class="mt-1.5 block size-1.5 shrink-0 rounded-full bg-emerald-500"></span>
-              {item}
-            </li>
-          ))}
-        </ul>
-      </div>
-    ))}
+    {
+      NOW.map(({ key }) => (
+        <div class="rounded-xl border border-gray-800 bg-gray-900/50 p-5">
+          <h3 class="text-sm font-semibold text-gray-300 mb-4">
+            {labels[key]}
+          </h3>
+          <ul class="space-y-2">
+            {now[key].map((item: string) => (
+              <li class="flex items-start gap-2 text-sm text-gray-400">
+                <span class="mt-1.5 block size-1.5 shrink-0 rounded-full bg-emerald-500" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
   </div>
 </div>
