@@ -19,7 +19,8 @@
     "CODE": "Code",
     "PREVIEW": "Preview",
     "EXPO_GO": "Expo Go",
-    "APK": "Download APK",
+    "APK": "APK",
+    "DEMO": "Demo",
     "STATUS_MVP": "MVP",
     "STATUS_ARCHIVED": "Archived",
     "PRIVATE_CODE": "This project's code is private"
@@ -119,7 +120,7 @@
   ],
   "PROJECTS": [
     {
-      "IMAGE": "/moneto.webp",
+      "IMAGE": "/images/moneto.webp",
       "TITLE": "Moneto",
       "TAGS": ["NEXT", "TYPESCRIPT", "TAILWIND", "SUPABASE", "GEMINI"],
       "STATUS": "mvp",
@@ -135,7 +136,7 @@
       }
     },
     {
-      "IMAGE": "/barbershop.webp",
+      "IMAGE": "/images/barbershop.webp",
       "TITLE": "Barbershop",
       "TAGS": ["NEXT", "TAILWIND", "TYPESCRIPT", "SUPABASE"],
       "STATUS": "mvp",
@@ -151,12 +152,13 @@
       }
     },
     {
-      "IMAGE": "/constructtrack-mobile.webp",
+      "IMAGE": "/images/constructtrack-mobile.webp",
       "TITLE": "ConstructTrack Mobile",
       "STATUS": "mvp",
       "TYPE": "mobile",
       "PRIVATE": true,
       "TAGS": ["REACTNATIVE", "EXPO", "SQLITE", "TYPESCRIPT"],
+      "DEMO_VIDEO": "/demo/constructtrack.mp4",
       "DESCRIPTION": "Mobile app designed for material dispatch and inventory tracking on construction sites with zero cellular reception. Enables scanning industrial barcodes, instant on-site stock validation, and digital signature capture, automatically syncing data with headquarters once connectivity returns.",
       "LINK": "",
       "GITHUB": "github.com/alez2312p/construct-track-app",
@@ -169,7 +171,7 @@
       }
     },
     {
-      "IMAGE": "/field-inspector.webp",
+      "IMAGE": "/images/field-inspector.webp",
       "TITLE": "FieldInspector",
       "STATUS": "mvp",
       "TYPE": "mobile",
@@ -187,11 +189,12 @@
       }
     },
     {
-      "IMAGE": "/constructtrack.webp",
+      "IMAGE": "/images/constructtrack.webp",
       "TITLE": "ConstructTrack",
       "TYPE": "web",
       "STATUS": "mvp",
       "TAGS": ["NEXT", "TAILWIND", "TYPESCRIPT", "POSTGRESQL", "PRISMA"],
+      "DEMO_VIDEO": "/demo/constructtrack.mp4",
       "DESCRIPTION": "Web-based inventory platform for construction companies. Centralizes material inflows and outflows across multiple job sites and warehouses, providing early low-stock alerts and real-time usage analytics.",
       "LINK": "constructtrack.alejandropl.com",
       "GITHUB": "github.com/alez2312p/constructtrack",
@@ -203,7 +206,7 @@
       }
     },
     {
-      "IMAGE": "/buckspay.webp",
+      "IMAGE": "/images/buckspay.webp",
       "TITLE": "Buckspay",
       "TAGS": ["NEXT", "TYPESCRIPT", "MONGODB", "FIREBASE"],
       "STATUS": "archived",
@@ -212,7 +215,7 @@
       "GITHUB": "github.com/bucks-pay/buckspay_landing"
     },
     {
-      "IMAGE": "/outlet.webp",
+      "IMAGE": "/images/outlet.webp",
       "TITLE": "Outlet",
       "TAGS": ["NEXT", "TYPESCRIPT", "TAILWIND", "SUPABASE", "PRISMA"],
       "STATUS": "mvp",
@@ -227,7 +230,7 @@
       }
     },
     {
-      "IMAGE": "/maquirent.webp",
+      "IMAGE": "/images/maquirent.webp",
       "TITLE": "Maquirent",
       "TAGS": ["NEXT", "TYPESCRIPT", "TAILWIND", "POSTGRESQL", "PRISMA"],
       "STATUS": "mvp",

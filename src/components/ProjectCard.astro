@@ -3,6 +3,7 @@ import WebsiteIcon from "../icons/Website.astro";
 import GitHubIcon from "../icons/GitHub.astro";
 import ExpoIcon from "../icons/Expo.astro";
 import DownloadIcon from "../icons/Download.astro";
+import PlayIcon from "../icons/Play.astro";
 import TypeBadge from "./TypeBadge.astro";
 import CaseStudy from "./CaseStudy.astro";
 import { TAGSLIST } from "./Tags.astro";
@@ -42,6 +43,7 @@ interface Props {
   TYPE?: "web" | "mobile" | "backend";
   EXPO_LINK?: string;
   APK_LINK?: string;
+  DEMO_VIDEO?: string;
   CASE_STUDY?: CaseStudyData;
 }
 
@@ -57,6 +59,7 @@ const {
   TYPE,
   EXPO_LINK,
   APK_LINK,
+  DEMO_VIDEO,
   CASE_STUDY,
 } = Astro.props;
 ---
@@ -79,9 +82,22 @@ const {
       height={338}
     />
     <div
-      class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"
+      class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent pointer-events-none"
     >
     </div>
+    {
+      DEMO_VIDEO && (
+        <button
+          type="button"
+          class="demo-video-trigger absolute inset-0 z-10 flex items-center justify-center bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer focus:opacity-100"
+          aria-label={`${i18n.MISC.DEMO ?? "Demo"}: ${TITLE}`}
+        >
+          <span class="flex items-center justify-center size-12 rounded-full bg-emerald-500 text-gray-950 shadow-lg shadow-emerald-500/30 transition-transform duration-300 hover:scale-110">
+            <PlayIcon class="size-5 translate-x-0.5 fill-current" />
+          </span>
+        </button>
+      )
+    }
   </div>
 
   <div class="flex flex-1 flex-col p-5">
@@ -127,28 +143,28 @@ const {
       {DESCRIPTION}
     </p>
 
-    <div class="flex items-center gap-3 mt-4 pt-4 border-t border-gray-800">
+    <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mt-4 pt-4 border-t border-gray-800">
       {
         GITHUB && !PRIVATE && (
           <a
             href={`https://${GITHUB}`}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-emerald-400 transition"
+            class="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-emerald-400 transition shrink-0 whitespace-nowrap"
           >
-            <GitHubIcon class="size-4" />
+            <GitHubIcon class="size-4 shrink-0" />
             {i18n.MISC.CODE}
           </a>
         )
       }
       {
         GITHUB && PRIVATE && (
-          <div class="relative inline-flex">
+          <div class="relative inline-flex shrink-0">
             <button
-              class="code-private-btn inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-emerald-400 transition cursor-pointer"
+              class="code-private-btn inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-emerald-400 transition cursor-pointer shrink-0 whitespace-nowrap"
               aria-label={i18n.MISC.PRIVATE_CODE}
             >
-              <GitHubIcon class="size-4" />
+              <GitHubIcon class="size-4 shrink-0" />
               {i18n.MISC.CODE}
             </button>
             <div class="code-private-tooltip pointer-events-none absolute bottom-full left-0 z-10 mb-2 w-max max-w-[200px] rounded-lg border border-gray-700 bg-gray-900 px-3 py-2 text-xs text-gray-300 opacity-0 transition-opacity duration-200 shadow-xl">
@@ -163,9 +179,9 @@ const {
             href={`https://${LINK}`}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-emerald-400 transition"
+            class="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-emerald-400 transition shrink-0 whitespace-nowrap"
           >
-            <WebsiteIcon class="size-4" />
+            <WebsiteIcon class="size-4 shrink-0" />
             {i18n.MISC.PREVIEW}
           </a>
         )
@@ -176,9 +192,9 @@ const {
             href={EXPO_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-emerald-400 transition"
+            class="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-emerald-400 transition shrink-0 whitespace-nowrap"
           >
-            <ExpoIcon class="size-4" />
+            <ExpoIcon class="size-4 shrink-0" />
             {i18n.MISC.EXPO_GO}
           </a>
         )
@@ -196,11 +212,22 @@ const {
               APK_LINK.startsWith("http") ? "noopener noreferrer" : undefined
             }
             download={APK_LINK.split("/").pop() || "construct-track-v1.0.0.apk"}
-            class="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-emerald-400 transition"
+            class="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-emerald-400 transition shrink-0 whitespace-nowrap"
           >
-            <DownloadIcon class="size-4" />
+            <DownloadIcon class="size-4 shrink-0" />
             {i18n.MISC.APK ?? "APK"}
           </a>
+        )
+      }
+      {
+        DEMO_VIDEO && (
+          <button
+            type="button"
+            class="demo-video-trigger inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-emerald-400 transition cursor-pointer shrink-0 whitespace-nowrap"
+          >
+            <PlayIcon class="size-4 fill-current text-emerald-400/90 shrink-0" />
+            {i18n.MISC.DEMO ?? "Demo"}
+          </button>
         )
       }
     </div>
@@ -212,6 +239,45 @@ const {
     style="background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(16,185,129,0.06), transparent 40%);"
   >
   </div>
+
+  {
+    DEMO_VIDEO && (
+      <dialog
+        class="demo-video-dialog fixed inset-0 z-50 m-auto max-h-[90vh] w-[92vw] max-w-4xl rounded-2xl border border-gray-800 bg-gray-950 p-0 text-gray-100 backdrop:bg-black/80 backdrop:backdrop-blur-sm open:flex open:flex-col shadow-2xl"
+      >
+        <div class="flex items-center justify-between border-b border-gray-800 px-5 py-3.5 bg-gray-900/60">
+          <div class="flex items-center gap-2">
+            <span class="inline-flex items-center justify-center size-6 rounded-md bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              <PlayIcon class="size-3.5 fill-current" />
+            </span>
+            <h3 class="text-sm font-semibold text-gray-100 sm:text-base">
+              {TITLE} — {i18n.MISC.DEMO ?? "Demo"}
+            </h3>
+          </div>
+          <button
+            type="button"
+            class="demo-video-close rounded-lg p-1.5 text-gray-400 transition hover:bg-gray-800 hover:text-gray-200 cursor-pointer"
+            aria-label="Cerrar video"
+          >
+            <svg class="size-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="relative bg-black flex items-center justify-center aspect-video overflow-hidden rounded-b-2xl">
+          <video
+            class="w-full h-full object-contain"
+            controls
+            preload="metadata"
+            playsinline
+            src={DEMO_VIDEO}
+          >
+            Tu navegador no soporta la reproducción de video HTML5.
+          </video>
+        </div>
+      </dialog>
+    )
+  }
 </article>
 
 <script>
@@ -239,5 +305,59 @@ const {
         tooltip.classList.add("opacity-0");
       }, 300);
     });
+  });
+
+  // Video Modal Handlers
+  document.addEventListener("click", function (e) {
+    const trigger = e.target.closest(".demo-video-trigger");
+    if (trigger) {
+      const card = trigger.closest("article");
+      const dialog = card ? card.querySelector(".demo-video-dialog") : null;
+      if (dialog && typeof dialog.showModal === "function") {
+        dialog.showModal();
+        document.body.style.overflow = "hidden";
+        const video = dialog.querySelector("video");
+        if (video) {
+          video.play().catch(() => {});
+        }
+      }
+      return;
+    }
+
+    const closeBtn = e.target.closest(".demo-video-close");
+    if (closeBtn) {
+      const dialog = closeBtn.closest("dialog");
+      if (dialog && typeof dialog.close === "function") {
+        const video = dialog.querySelector("video");
+        if (video) video.pause();
+        dialog.close();
+        document.body.style.overflow = "";
+      }
+      return;
+    }
+
+    // Backdrop click
+    const dialogs = document.querySelectorAll(".demo-video-dialog");
+    dialogs.forEach((dialog) => {
+      if (dialog.open && e.target === dialog) {
+        const video = dialog.querySelector("video");
+        if (video) video.pause();
+        dialog.close();
+        document.body.style.overflow = "";
+      }
+    });
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      const dialogs = document.querySelectorAll(".demo-video-dialog");
+      dialogs.forEach((dialog) => {
+        if (dialog.open) {
+          const video = dialog.querySelector("video");
+          if (video) video.pause();
+          document.body.style.overflow = "";
+        }
+      });
+    }
   });
 </script>
