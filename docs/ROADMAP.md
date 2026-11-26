@@ -18,6 +18,7 @@
 9. [NowSection y Blog](#9-nowsection-y-blog)
 10. [Ideas de Proyectos Nuevos](#10-ideas-de-proyectos-nuevos)
 11. [Archivos a Modificar/Crear](#11-archivos-a-modificarcrear)
+12. [Multimedia y Reorganización de Assets](#12-multimedia-y-reorganización-de-assets)
 
 ---
 
@@ -29,7 +30,7 @@
 | 1.2 | Llenar descripción vacía de E-Commerce en español | ~~`src/i18n/locales/es.json`~~ | ❌ Proyecto eliminado del JSON en reestructuración previa |
 | 1.3 | Corregir gramática del inglés en HOME.INTRO ("in front-end..." → "as a front-end...") | `src/i18n/locales/en.json` | ✅ Completado |
 | 1.4 | Open Graph / Twitter Card meta tags | `src/layouts/Layout.astro` | ✅ Completado |
-| 1.5 | Crear imagen OG (1200×630) | `public/og-image.png` | ✅ Completado |
+| 1.5 | Crear imagen OG (1200×630) | `public/images/og-image.png` | ✅ Completado |
 
 ---
 
@@ -48,7 +49,7 @@ Se agregó la key `HOME.TAGLINE` en ambos JSONs y se renderiza en `HeroSection.a
 
 **Estado**: ✅ Completado
 
-Se eligió `public/avatar/avatar.png`, se optimizó a 256×256 como `public/avatar-optimized.png` y se integró en `AboutMe.astro` reemplazando las iniciales "AP".
+Se eligió `public/images/avatar/avatar_3.png`, se optimizó a 256×256 como `public/images/avatar-optimized.webp` y se integró en `AboutMe.astro` y `GitHubStats.astro`.
 
 ### 2.3 Reescribir AboutMe
 
@@ -293,15 +294,39 @@ El usuario decidió no implementar blog por el momento.
 
 | Archivo | Propósito |
 |---------|-----------|
-| `public/og-image.png` | ✅ OG image 1200×630px creada |
-| `public/og-image.svg` | ✅ Fuente editable de la OG image |
+| `public/images/og-image.png` | ✅ OG image 1200×630px creada |
+| `public/images/og-image.svg` | ✅ Fuente editable de la OG image |
 | `src/components/StackTracker.astro` | ✅ Sticky sidebar con stack actual |
 | `public/robots.txt` | ✅ Creado |
 | `src/pages/404.astro` | ✅ Creada |
 | `src/pages/en/404.astro` | ✅ Creada |
+| `public/demo/constructtrack.mp4` | ✅ Video demo de ConstructTrack integrado |
+| `src/icons/Play.astro` | ✅ Icono de reproducción para video demos |
 | `src/content/writing/*.md` | Artículos del blog (opcional) |
 | `src/components/RecentWritings.astro` | Sección de blog (opcional) |
 | `docs/proyectos/finanzas-personales-ia.md` | ✅ Documentación completa del proyecto Finanzas con IA |
+
+---
+
+## 12. Multimedia y Reorganización de Assets — ✅ Completado
+
+### 12.1 Centralización de imágenes en `public/images/`
+Se reorganizó la carpeta `public/` para evitar la dispersión de archivos gráficos en la raíz:
+- Todas las capturas de proyectos en formato `.webp`, avatar y assets de redes sociales se centralizaron en `public/images/`.
+- La raíz de `public/` se mantiene limpia con subcarpetas dedicadas (`images/`, `demo/`, `fonts/`) y archivos raíz esenciales (`favicon.ico`, `favicon.png`, `robots.txt`, `sitemap.xml`, CV).
+- Rutas actualizadas en `Layout.astro`, `AboutMe.astro`, `GitHubStats.astro`, `es.json` y `en.json`.
+
+### 12.2 Video Demos y Modal de Reproducción
+- Se añadió soporte para `DEMO_VIDEO` en el modelo y las tarjetas de proyecto (`ProjectCard.astro`, `Projects.astro`).
+- Se integró el video demo de **ConstructTrack** (`public/demo/constructtrack.mp4`).
+- Creación del componente de icono `Play.astro`.
+- Botón Play flotante sobre thumbnail en hover y acción directa en la fila de enlaces.
+- Modal de video con `<dialog>` nativo de HTML, control de aspecto 16:9 1080p y pausa automática de video al cerrar, hacer clic en el backdrop o presionar Escape.
+
+### 12.3 Refinamiento de UI/UX en Botones de Acción
+- Prevención de quiebre de texto en varias líneas mediante `shrink-0 whitespace-nowrap` en todos los enlaces de la tarjeta.
+- Contenedor flexible `flex-wrap gap-x-4 gap-y-2` para adaptarse sin deformaciones a columnas angostas y dispositivos móviles.
+- Etiquetas concisas y proporcionales: `Código` · `APK` · `Demo`.
 
 ---
 
@@ -329,6 +354,10 @@ El usuario decidió no implementar blog por el momento.
 - [x] Badge de madurez (3.4) — MVP / Archivado
 - [x] Sitemap + robots.txt + 404
 - [x] Limpiar código muerto (LinkButton.astro eliminado, comentario index.ts, package.json name)
+- [x] Reorganizar imágenes en `public/images/`
+- [x] Soporte para video demos con modal `<dialog>` interactivo
+- [x] Video demo de ConstructTrack integrado
+- [x] Fix de quiebre de palabras y layout responsivo en botones de proyectos
 
 ### Pendiente
 - [x] Agregar clientes freelance al portafolio

@@ -1,54 +1,55 @@
-# Portafolio - Alejandro Pérez Lezama
+# Portafolio personal
 
-Portafolio personal desarrollado con [Astro](https://astro.build) y [Tailwind CSS](https://tailwindcss.com).
+Código fuente de mi portafolio web ([alejandropl.com](https://alejandropl.com)), desarrollado con [Astro](https://astro.build) y [Tailwind CSS](https://tailwindcss.com).
 
-## 🚀 Tecnologías
+## Tecnologías
 
-- **Framework:** Astro 4.x
-- **Estilos:** Tailwind CSS 3.x
+- **Framework:** Astro 4
+- **Estilos:** Tailwind CSS 3
 - **Lenguaje:** TypeScript
-- **Tipografía:** Fontsource Onest
 
-## 🛠️ Estructura del proyecto
+## Estructura del proyecto
 
-```
+```text
 /
+├── public/              # Archivos estáticos
+│   ├── demo/            # Videos de demostración de proyectos
+│   ├── fonts/           # Fuentes web locales
+│   └── images/          # Capturas de proyectos y avatar
 ├── src/
 │   ├── components/      # Componentes reutilizables
 │   ├── icons/           # Iconos SVG
-│   ├── i18n/            # Internacionalización (ES/EN)
+│   ├── i18n/            # Diccionarios de traducción (es.json y en.json)
 │   ├── layouts/         # Layouts base
-│   └── pages/           # Páginas del sitio
-└── public/              # Archivos estáticos
+│   └── pages/           # Rutas y páginas (ES y EN)
+└── docs/                # Documentación interna y notas de proyectos
 ```
 
-## 📋 Características
+## Comandos
 
-- 🌐 Soporte bilingüe (Español / Inglés)
-- 🌓 Tema claro/oscuro
-- 📱 Diseño responsive
-- 🏠 Secciones: Hero, Experiencia, Proyectos, Sobre mí
+```bash
+# Instalar dependencias
+npm install
 
-## 🧞 Comandos
+# Servidor de desarrollo (localhost:4321)
+npm run dev
 
-| Comando | Acción |
-| :--- | :--- |
-| `npm install` | Instala dependencias |
-| `npm run dev` | Inicia servidor en `localhost:4321` |
-| `npm run build` | Compila para producción |
-| `npm run preview` | Previsualiza el build |
+# Verificación de tipos y build de producción
+npm run build
 
-## ✏️ Personalización
+# Previsualizar el build generado
+npm run preview
+```
 
-El contenido se encuentra en:
-- `src/i18n/locales/es.json` - Contenido en español
-- `src/i18n/locales/en.json` - Contenido en inglés
+## Contenido
 
-## 🔗 Enlaces
+Los textos y proyectos están centralizados en los archivos de traducción para soportar español e inglés:
+- `src/i18n/locales/es.json`
+- `src/i18n/locales/en.json`
 
-- **LinkedIn:** linkedin.com/in/alejandro-perez-lezama
-- **Email:** alejandropl2509@gmail.com
+## Contacto
 
----
-
-Inspirado en el portafolio de [MiduDev](https://midu.dev)
+- **Sitio:** [alejandropl.com](https://alejandropl.com)
+- **LinkedIn:** [linkedin.com/in/alejandro-perez-lezama](https://www.linkedin.com/in/alejandro-perez-lezama/)
+- **GitHub:** [github.com/alez2312p](https://github.com/alez2312p)
+- **Email:** [alejandropl2509@gmail.com](mailto:alejandropl2509@gmail.com)
